@@ -31,7 +31,7 @@ include = ["photon_platform"]
 namespaces = true
 
 [tool.setuptools.dynamic]
-version = {attr = "photon_platform..__version__"}
+version = {attr = "photon_platform.sphinxilator.__version__"}
 
 [project.urls]
 "Website" = "https://photon-platform.github.io/sphinxilator"
