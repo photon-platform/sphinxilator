@@ -1,0 +1,14 @@
+    <footer>
+{# {% include '_asides/contact.html.twig' %} #}
+{% include '_asides/follow.html.twig' %}
+{% set menu_footer = page.collection(
+      {
+        'items': { '@taxonomy': {'photon': 'footer'} },
+        'order': {'by': 'default', 'dir': 'asc'},
+        'url_taxonomy_filters': false
+      }
+    ) %}
+{% include '_sections/nav.html.twig' 
+        with {'nav_list':menu_footer, 'nav_title':'More Actions'} %}
+{% include '_asides/copyright.html.twig' %}
+    </footer>

@@ -1,0 +1,21 @@
+      <aside class="follow">
+        <h2>Follow</h2>
+        <ul>
+{%   if config.organization.social.facebook %}
+          <li><a target="_blank" rel="noopener" title="follow on facebook" href="https://www.facebook.com/{{ config.organization.social.facebook }}" >f</a></li>
+{%   endif %}
+{%   if config.organization.social.twitter %}
+          <li><a target="_blank" rel="noopener" title="follow on twitter" href="https://twitter.com/intent/follow?screen_name={{ config.organization.social.twitter }}" >t</a></li>
+{%   endif %}
+{%   if config.organization.social.linkedin %}
+          <li><a target="_blank" rel="noopener" title="follow on linkedin" href="https://www.linkedin.com/in/{{ config.organization.social.linkedin }}" >i</a></li>
+{%   endif %}
+{%   if config.organization.social.youtube %}
+          <li><a target="_blank" rel="noopener" title="follow on youtube" href="https://www.youtube.com/channel/{{ config.organization.social.youtube }}" >y</a></li>
+{%   endif %}
+{%   if config.organization.social.github %}
+          <li><a target="_blank" rel="noopener" title="follow on github" href="https://github.com/{{ config.organization.social.github }}" >g</a></li>
+{%   endif %}
+          <li><a target="_blank" rel="noopener" title="rss" href="{{ page.url ~ '.rss' }}" >r</a></li>
+        </ul>
+      </aside>

@@ -1,0 +1,24 @@
+{# https://gist.github.com/rhukster/76a4087c39a7965ed5fd #}
+{% macro loop(collection) %}
+{%   import _self as macros %}
+{%   for p in collection %}
+{%     if p.routable  %}
+      <li>
+        <a href="{{ p.url }}">{{ p.menu }} - {{ p.children.count }}</a>
+{%       if p.children.count > 0 %}
+        <ul>
+          {{ macros.loop(p.children) }}
+        </ul>
+{%       endif %}
+      </li>
+{%     endif %}
+{%   endfor %}
+{% endmacro %}
+
+{%- import _self as macros %}
+    <nav class="tree">
+      <h1>Site Map</h1>
+      <ul>
+        {{ macros.loop(collection) }}
+      </ul>
+    </nav>

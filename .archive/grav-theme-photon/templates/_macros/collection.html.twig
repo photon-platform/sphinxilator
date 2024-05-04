@@ -1,0 +1,28 @@
+{% macro render(article, name) %}
+{% if name=='' %}
+{%   set articles=article.collection('content') %}
+{%   set articles_details=article.header.content %}
+{%   set name = "default" %}
+{% else %}
+{%    set articles=article.collection(name) %}
+{%    set articles_details=attribute(article.header, name) %}
+{# {{ debug('name: ' ~ name) }} #}
+{# {{ dump(article['show_gallery']) }} #}
+{% endif %}
+      <section class="collection">
+        <header>
+          <h1>{{ articles_details.title }} : <span class="count">{{ articles.count }}</span></h1>
+          <nav>
+{% set toggle_id = name ~ '-expand-toggle' %}
+            <input class="expand" type="checkbox" id="{{ toggle_id }}" >
+            <label for="{{ toggle_id }}" ></label>
+          </nav>
+        </header>
+{% for item in articles %}
+{%   if item.url != article.url  %}
+{%     include ["_articles/#{ article.template }-excerpt.html.twig", "_articles/article-excerpt.html.twig"] with { 'article': item } %}
+{%   endif %}
+{% endfor %}
+{% include '_sections/pagination.html.twig'   %}
+      </section>
+{% endmacro %}}

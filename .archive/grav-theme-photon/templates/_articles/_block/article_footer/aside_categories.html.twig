@@ -1,0 +1,10 @@
+{% if article.taxonomy.category %}
+          <nav class="article-categories">
+            <h2>Categories</h2>
+            <ul>
+{%   for category in article.taxonomy.category %}
+              <li><a href="/search/taxonomy/category:{{ category }}">{{ category }}</a></li>
+{%   endfor %}
+            </ul>
+          </nav>
+{% endif %}

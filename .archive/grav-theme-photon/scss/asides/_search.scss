@@ -1,0 +1,26 @@
+/* asides/search *****************************/
+
+//TODO: this is not integrated
+
+aside.search {
+  > section {
+    // flex-flow: column nowrap;
+  }
+}
+.search-result-list {
+  // padding-left: 10px;
+}
+
+.search-result-title {
+  font-weight: 700;
+}
+
+.search-result {
+  font-weight: 300;
+}
+
+.search-keyword {
+  font-weight: 700;
+  font-style: normal;
+
+}

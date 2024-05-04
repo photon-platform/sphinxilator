@@ -1,0 +1,20 @@
+{% if article.header.members %}
+          <aside class="members">
+            <h2>Members</h2>
+            <dl>
+  {%   for key, val in dataObj %}
+  {%     if key != "@type" %}
+              <dt>{{ t('PHOTON.' ~ dataKey ~ '.' ~ key) }}</dt>
+              <dd>
+  {%       if val is iterable %}
+                {{ val.count }}
+                {{ this.printData( dataKey ~ '.' ~ key, val ) }}
+  {%       else %}
+                {{ val }}
+  {%       endif %}
+              </dd>
+  {%     endif %}
+  {%   endfor %}
+            </dl>
+          </aside>
+{% endif %}

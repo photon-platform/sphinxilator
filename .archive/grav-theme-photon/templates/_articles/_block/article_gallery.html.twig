@@ -1,0 +1,40 @@
+{% if article.header.gallery.show == 1 %}
+        <div class="gallery">
+          <div class="panel"></div>
+          <div class="list">
+{%   if article.header.gallery.images %}
+{%     for image in article.header.gallery.images -%}
+{%       if image.image ends with '.svg'  %}
+{%         set img = article.media.files[image.image] %}
+            <figure data-image="{{ img.url }}">
+              {{ img.html(image.title, '', 'svg') }}
+{%         if image.title %}
+              <figcaption>
+                {{ image.title|markdown }}
+              </figcaption>
+{%         endif %}
+            </figure>
+{%       else %}
+{%         set filename = image.image|split('/')|last %}
+{%         set img = article.media.images[image.image] %}
+            <figure data-image="{{ img.resize(1920).url }}">
+              {{ img.cropZoom(400,400).html('') }}
+{%         if image.title %}
+              <figcaption>
+                {{ image.title|markdown }}
+              </figcaption>
+{%         endif %}
+            </figure>
+{%       endif %}
+{%     endfor %}
+{%   else %}
+{%     for image in article.media.images -%}
+          {# does not include svg files #}
+            <figure data-image="{{ image.resize(1920).url }}">
+              {{ image.cropZoom(400,400).html('') }}
+            </figure>
+{%     endfor %}
+{%   endif %}
+          </div>
+        </div>
+{% endif  %}

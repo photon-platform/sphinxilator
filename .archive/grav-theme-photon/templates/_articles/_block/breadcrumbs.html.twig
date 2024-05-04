@@ -1,0 +1,19 @@
+{#
+Original Code from breadcrumbs.plugin
+- still need it for breadcrumbs.get
+#}
+{% set breadcrumbs_config = config.plugins['photon-breadcrumbs'] %}
+{% set crumbs = breadcrumbs.getFromArticle( article ) %}
+{% if breadcrumbs_config.enabled %}
+            <div class="breadcrumbs">
+{%   if crumbs %}
+{%     for crumb in crumbs %}
+              <a href="{{ crumb.url }}">{{ crumb.menu }}</a>
+{%     endfor %}
+{%   else %}
+{%     if page.url != "/" %}
+              <a href="/">Home</a>
+{%     endif %}
+{%   endif %}
+            </div>
+{% endif %}

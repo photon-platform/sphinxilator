@@ -1,0 +1,33 @@
+// default anchor tag
+
+a {
+  --color: var(--color-key);
+  --bg: none;
+  --a-active-color: var(--color-2-dark);
+
+  color: var(--color);
+  background: var(--bg);
+  text-decoration: none;
+
+  &:link {
+    color: var(--color);
+  }
+
+  &:visited {
+    color: var(--color);
+  }
+
+  &:hover {
+    --bg: var(--color-key-light);
+    --color: #222;
+    // box-shadow: .25em .25em .25em rgba(0,0,0,.4);
+    &::marker {
+      background: var(--bg);
+    }
+  }
+
+  &:active {
+    color: var(--a-active-color);
+  }
+
+}

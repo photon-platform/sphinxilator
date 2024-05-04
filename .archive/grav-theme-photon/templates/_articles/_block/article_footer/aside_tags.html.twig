@@ -1,0 +1,10 @@
+{% if article.taxonomy.tag %}
+          <nav class="article-tags">
+            <h2>Tags</h2>
+            <ul>
+{%   for tag in article.taxonomy.tag %}
+              <li><a href="/search/taxonomy/tag:{{ tag }}">{{ tag }}</a></li>
+{%   endfor %}
+            </ul>
+          </nav>
+{% endif %}

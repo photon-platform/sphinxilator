@@ -1,0 +1,21 @@
+{% macro renderToc(article, name) %}
+{% import _self as this %}
+{% if name=='' %}
+{%   set articles=article.collection('content') %}
+{# {%   set articles_details=article.header.content %} #}
+{%   set name = "default" %}
+{% else %}
+{%    set articles=article.collection(name) %}
+{# {%    set articles_details=attribute(article.header, name) %} #}
+{# {{ debug('name: ' ~ name) }} #}
+{# {{ dump(article['show_gallery']) }} #}
+{% endif %}
+      <ul class="toc">
+{% for item in articles %}
+        <li>
+          <p><a href="{{ item.url }}" >{{ item.menu }}</a></p>
+{{    this.renderToc(item)  }}
+        </li>
+{% endfor %}
+      </ul>
+{% endmacro %}}

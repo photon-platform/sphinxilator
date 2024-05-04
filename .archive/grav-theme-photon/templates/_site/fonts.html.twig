@@ -1,0 +1,13 @@
+    <!-- CSS fonts -->
+    <link href="https://fonts.googleapis.com/css?family={{ config.style.font }}:400,400i,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family={{ config.style.font_display }}:400,400i,700" rel="stylesheet">
+    <style>
+    :root {
+      --font: {{ config.fonts[config.style.font] }};
+      --font-display: {{ config.fonts[config.style.font_display] }};
+      --font-code: {{ config.style.font_code }};
+      --font-form: var(--font);
+
+      --bullet: '✴';
+    }
+    </style>

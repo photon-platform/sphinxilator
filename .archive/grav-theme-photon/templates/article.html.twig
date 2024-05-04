@@ -1,0 +1,31 @@
+{% extends 'default.html.twig' %}
+{# {% set type = "article" %} #}
+{# {% set types = "articles" %} #}
+{% block template %}
+{{ parent() }}
+{% if config.system.debugger.enabled %}
+<!-- user/themes/photon/templates/article.html.twig -->
+{% endif %}
+{% endblock template %}
+
+{% block body_template_classes %}{{ parent() }} article{% endblock body_template_classes %}
+
+{% block main %}
+    <main id="main" data-collection="{{ page.collection.count }}">
+{%   block content %}
+{%     include [
+            "_articles/#{ page.template }.html.twig", 
+            "_articles/article.html.twig"
+          ] with { 'article': page } %}
+{%     block collection %}
+{%       if page.header.content.items %}
+{%         include [
+              "_articles/_block/#{ page.template }_collection.html.twig", 
+              "_articles/_block/article_collection.html.twig"
+            ] with { 'article': page } %}
+{%       endif %}
+{%     endblock collection %}
+{%   endblock content %}
+    </main>
+{% endblock main %}
+

@@ -1,0 +1,10 @@
+{% set nav_title = 'Featured'  %}
+{% set options = { 
+    'items': {'@taxonomy.photon': 'featured' }, 
+    'limit': 5, 
+    'order': {'by': 'date', 'dir': 'desc'},
+    'url_taxonomy_filters': false
+} %}
+{% set nav_list = page.collection(options) %}
+{% include '_sections/nav.html.twig' 
+        with {'nav_list':nav_list, 'nav_title':nav_title} %}

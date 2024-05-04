@@ -1,0 +1,119 @@
+{% if page.url==home_url %}
+{%   set page_title = header.title ~ ' | ' ~ header.subtitle %}
+{%   set og_type = 'website' %}
+{% else %}
+{%   set page_title = header.title ~ ' | ' ~ site.title %}
+{%   set og_type = 'article' %}
+{% endif %}
+{% set page_description = page.summary|striptags|rtrim|regex_replace( '/\n/', ' - ' ) %}
+{# get featured image #}
+{% set fig_img = page.header.figure.image %}
+{% if not fig_img %}
+{%   set img = page.media.images | first %}
+{%   set fig_img = img.url %}
+{% endif %}
+{% set img = "" %}
+{% if fig_img ends with '.svg'  %}
+{%   set img = page.media.files[fig_img] %}
+{% else %}
+{%   set filename = fig_img|split('/')|last %}
+{%   set img = page.media[filename] %}
+{% endif %}
+{% if img %}
+{%   set featured_image = base_url_absolute ~ img.url %}
+{{   debug("featured_image: " ~ featured_image) }}
+{% endif %}
+{% block head %}
+  <head>
+
+    <title>{{ page_title }}</title>
+
+{% include '_site/meta.html.twig'  %}
+
+{% block favicon %}
+{#   TODO put favicon in config #}
+    <!-- favicon -->
+    <link rel="icon"  href="/user/images/favicon.ico">
+{% endblock favicon %}
+
+{% if config.organization.google_search %}
+    <meta name="google-site-verification" content="{{ config.organization.google_search }}" />
+{% endif %}
+
+{% include '_site/analytics.html.twig'  %}
+
+{% block rss %}
+    <!-- rss -->
+    <link rel="alternate" href="{{ page.url ~ '.rss' }}" title="{{ page_title }}" type="application/atom+xml">
+{% endblock rss %}
+
+{% block schema %}
+{% include '_json-ld/article.html.twig'  %}
+{% if page.template != "article" %}
+{% include "_json-ld/#{ page.template }.html.twig" ignore missing %}
+{% endif %}
+{% endblock schema %}
+
+{% block opengraph %}
+    <!-- opengraph -->
+    <meta property="og:title" content="{{ page_title }}">
+    <meta property="og:type" content="{{ og_type }}">
+    <meta property="og:description" content="{{ page_description }}">
+    <meta property="og:image" content="{{ featured_image }}">
+    <meta property="og:url" content="{{ page.url }}">
+
+    <!-- twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <!-- <meta name="twitter:site" content="@phi_architect"> -->
+    <meta name="twitter:creator" content="@phi_architect">
+    <meta name="twitter:title" content="{{ page_title }}">
+    <meta name="twitter:description" content="{{ page_description }}">
+    <meta name="twitter:image" content="{{ featured_image }}">
+{% endblock opengraph %}
+
+{% block stylesheets %}
+{% do assets.add('theme://css/photon.css', {priority:50, group:'photon'} ) %}
+{% do assets.add('theme://css/photon-print.css', {priority:50, group:'photon-print'} ) %}
+{% endblock %}
+
+    <!-- CSS photon -->
+    {{ assets.css('photon') }}
+    <!-- CSS photon-plugins -->
+    {{ assets.css('photon-plugins') }}
+    <!-- CSS photon-print -->
+    {{ assets.css('photon-print') }}
+    <!-- CSS  -->
+    {{ assets.css() }}
+
+{% block css_fonts %}
+{# {% include '_site/fonts.html.twig'  %} #}
+{% endblock css_fonts %}
+
+{% block css_vars %}
+{% include '_site/css_vars.html.twig'   %}
+{% endblock css_vars %}
+
+{% block javascripts %}
+{# {%- do assets.add( 'https://code.jquery.com/jquery-3.2.1.slim.min.js',  {'priority':1001} ) %} #}
+{% if browser.getBrowser == 'msie' and browser.getVersion >= 8 and browser.getVersion <= 9 %}
+{% do assets.add('https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js',
+  {'priority':101, 'loading':'defer'} ) %}
+{% do assets.add('https://oss.maxcdn.com/respond/1.4.2/respond.min.js',
+  {'priority':101, 'loading':'defer'} ) %}
+{% endif %}
+
+{%- do assets.addJs('theme://js/article.js',
+  {'priority':200, 'pipeline':false, 'loading':'defer', 'group':'photon' }) %}
+{%- do assets.addJs('theme://js/showcase.js',
+  {'priority':300, 'pipeline':false, 'loading':'defer', 'group':'photon' }) %}
+{% endblock javascripts %}
+
+    <!-- JS -->
+    {{ assets.js() }}
+    <!-- JS photon -->
+    {{ assets.js('photon') }}
+    <!-- JS photon-plugins -->
+    {{ assets.js('photon-plugins') }}
+
+  </head>
+{% endblock head %}

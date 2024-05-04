@@ -1,0 +1,8 @@
+    <div class="asides">
+{% include '_asides/list-featured.html.twig' %}
+{% include '_asides/list-recent.html.twig' %}
+{% include '_asides/list-taxonomy.html.twig' 
+        with {'tax_type':'category', 'nav_title':'Categories'} %}
+{% include '_asides/list-taxonomy.html.twig' 
+        with {'tax_type':'tag', 'nav_title':'Tags'} %}
+    </div>

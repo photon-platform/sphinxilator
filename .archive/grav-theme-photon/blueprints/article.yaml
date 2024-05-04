@@ -1,0 +1,559 @@
+title: Article
+'@extends':
+    type: default
+    context: blueprints://pages
+
+form:
+  fields:
+    tabs:
+      fields:
+
+        content:
+          type: tab
+          title: PLUGIN_ADMIN.CONTENT
+
+          fields:
+            columns:
+              type: columns
+              fields:
+                _content:
+                  type: column
+                  fields:
+
+                    header.title:
+                      type: text
+                      autofocus: true
+                      style: vertical
+                      label: PLUGIN_ADMIN.TITLE
+
+                    header.subtitle:
+                      type: text
+                      style: vertical
+                      label: Subtitle
+
+                    content:
+                        type: markdown
+                        validate:
+                          type: textarea
+
+                    header.media_order:
+                      type: pagemedia
+                      label: PLUGIN_ADMIN.PAGE_MEDIA
+
+                    _ordering:
+                      type: fieldset
+                      title: ✴ Ordering
+                      help: select how this document is ordered amongst its siblings
+                      info: manual or by date (or other default)
+                      # text: Numeric prefixes
+                      # icon: asterisk
+                      collapsed: false     # Initial state of fieldset (see collapsible option)
+                      collapsible: true    # Whether one can expand the fieldset or not
+                      fields:
+
+                        ordering:
+                          type: toggle
+                          label: PLUGIN_ADMIN.FOLDER_NUMERIC_PREFIX
+                          help: PLUGIN_ADMIN.FOLDER_NUMERIC_PREFIX_HELP
+                          highlight: 1
+                          options:
+                            1: PLUGIN_ADMIN.ENABLED
+                            0: PLUGIN_ADMIN.DISABLED
+                          validate:
+                            type: bool
+
+                        order:
+                          type: order
+                          label: PLUGIN_ADMIN.SORTABLE_PAGES
+                          sitemap:
+
+                _meta:
+                  type: column
+                  fields:
+
+                    _main:
+                      type: fieldset
+                      title: ✴ Main
+                      help: page attributes
+                      info: general info on this page
+                      # text: use meta data to help organize your info. use `featured` and `showcase` tags
+                      # icon: asterisk
+                      collapsed: false     # Initial state of fieldset (see collapsible option)
+                      collapsible: true    # Whether one can expand the fieldset or not
+                      fields:
+
+                        folder:
+                          type: text
+                          label: PLUGIN_ADMIN.FOLDER_NAME
+                          validate:
+                            rule: slug
+
+                        route:
+                          type: parents
+                          label: PLUGIN_ADMIN.PARENT
+                          classes: fancy
+
+                        name:
+                          type: select
+                          classes: fancy
+                          label: PLUGIN_ADMIN.PAGE_FILE
+                          help: PLUGIN_ADMIN.PAGE_FILE_HELP
+                          default: default
+                          data-options@: '\Grav\Common\Page\Pages::pageTypes'
+
+                        header.author:
+                          type: pages
+                          label: Page Author
+                          help: select the author of this article
+                          size: medium
+                          classes: fancy
+                          show_all: false
+                          show_modular: false
+                          show_root: false
+
+                        header.collection.name:
+                          type: text
+                          label: Collection name
+                          default: Articles
+
+                        header.collection.showCount:
+                          type: toggle
+                          label: Show collection count
+                          options:
+                            1: PLUGIN_ADMIN.YES
+                            0: PLUGIN_ADMIN.NO
+                          default: 0
+                          validate:
+                            type: bool
+
+                        header.collection.showMenu:
+                          type: toggle
+                          label: Show collection menu
+                          options:
+                            1: PLUGIN_ADMIN.YES
+                            0: PLUGIN_ADMIN.NO
+                          default: 0
+                          validate:
+                            type: bool
+                            
+                        header.content.items:
+                          type: text
+                          label: Collection source
+                          default: '@self.children'
+                          # toggleable: true
+
+                        header.child_type:
+                          type: select
+                          label: PLUGIN_ADMIN.DEFAULT_CHILD_TYPE
+                          default: Article
+                          # toggleable: true
+                          data-options@: '\Grav\Common\Page\Pages::types'
+
+                    _figure:
+                      type: fieldset
+                      title: ✴ Figure
+                      help: main figure of the article
+                      info: main figure and gallery images
+                      # text: use meta data to help organize your info. use `featured` and `showcase` tags
+                      # icon: asterisk
+                      collapsed: false     # Initial state of fieldset (see collapsible option)
+                      collapsible: true    # Whether one can expand the fieldset or not
+                      fields:
+
+                        header.figure.image:
+                          type: filepicker
+                          label: Featured Image
+                          help: Select of featured image from the items in the folder
+                          folder: 'self@'
+                          preview_images: true
+                          acccept:
+                            - .png
+                            - .jpg
+                            - .gif
+                            - .svg
+
+                        header.figure.title:
+                          type: text
+                          label: Image Title
+                          help: used in title attribute of image tag
+
+                        header.figure.alt:
+                          type: text
+                          label: Image Alt Text
+                          help: used in alt attribute of image tag for screen readers - describes the image
+
+                        header.figure.caption:
+                          type: markdown
+                          validate:
+                            type: textarea
+                          label: Image Caption
+                          help: can contain full text markdown
+
+                        header.figure.youtube:
+                          type: text
+                          label: link to Youtube Video
+                          help: input just the video code
+
+
+                    _gallery:
+                      type: fieldset
+                      title: ✴ Gallery
+                      help: collection of images at end of article
+                      info: image collection
+                      # text: use meta data to help organize your info. use `featured` and `showcase` tags
+                      # icon: asterisk
+                      collapsed: true     # Initial state of fieldset (see collapsible option)
+                      collapsible: true    # Whether one can expand the fieldset or not
+                      fields:
+
+                        header.gallery.show:
+                          type: toggle
+                          toggleable: true
+                          label: Show Gallery
+                          help: show the gallery panel
+                          highlight: 1
+                          options:
+                            1: yes
+                            0: no
+                          default: 1
+                          validate:
+                            type: bool
+
+                        header.gallery.images:
+                          type: list
+                          style: vertical
+                          label: gallery collection
+                          fields:
+
+                            .image:
+                              type: filepicker
+                              label: Image
+                              help: select image
+                              folder: 'self@'
+                              preview_images: true
+                              acccept:
+                                - .png
+                                - .jpg
+                                - .gif
+                                - .svg
+
+                            .title:
+                              type: text
+                              label: title
+
+
+
+                    _attachments:
+                      type: fieldset
+                      title: ✴ Attachments
+                      help: select files
+                      info: select files
+                      # text: use meta data to help organize your info. use `featured` and `showcase` tags
+                      # icon: asterisk
+                      collapsed: true     # Initial state of fieldset (see collapsible option)
+                      collapsible: true    # Whether one can expand the fieldset or not
+                      fields:
+
+                        header.attachments:
+                          type: list
+                          style: vertical
+                          label: Attachments
+                          fields:
+
+                            .file:
+                              type: filepicker
+                              label: document
+                              help: upload documents to page media first
+                              folder: 'self@'
+                              preview_images: true
+
+                            .title:
+                              type: text
+                              label: title
+
+
+                    # _taxonomy:
+                      # type: fieldset
+                      # title: ✴ Taxonomy
+                      # help: meta data you relate to an article, primarily categories and tags
+                      # info: categories, tags, etc
+                      # # text: use meta data to help organize your info. use `featured` and `showcase` tags
+                      # # icon: asterisk
+                      # collapsed: false     # Initial state of fieldset (see collapsible option)
+                      # collapsible: true    # Whether one can expand the fieldset or not
+                      # fields:
+
+                        # header.taxonomy:
+                          # type: taxonomy
+                          # label: PLUGIN_ADMIN.TAXONOMY
+                          # multiple: true
+                          # validate:
+                            # type: array
+
+                        # header.body_classes:
+                          # type: text
+                          # size: small
+                          # label: PLUGIN_ADMIN.BODY_CLASSES
+
+
+
+        options:
+          type: tab
+          title: PLUGIN_ADMIN.OPTIONS
+
+          fields:
+
+            _publishing:
+              type: section
+              title: PLUGIN_ADMIN.PUBLISHING
+              underline: true
+
+              fields:
+                header.published:
+                  type: toggle
+                  toggleable: true
+                  label: PLUGIN_ADMIN.PUBLISHED
+                  help: PLUGIN_ADMIN.PUBLISHED_HELP
+                  highlight: 1
+                  size: medium
+                  options:
+                    1: PLUGIN_ADMIN.YES
+                    0: PLUGIN_ADMIN.NO
+                  validate:
+                    type: bool
+
+                header.date:
+                  type: datetime
+                  label: PLUGIN_ADMIN.DATE
+                  toggleable: true
+                  help: PLUGIN_ADMIN.DATE_HELP
+
+                header.publish_date:
+                  type: datetime
+                  label: PLUGIN_ADMIN.PUBLISHED_DATE
+                  toggleable: true
+                  help: PLUGIN_ADMIN.PUBLISHED_DATE_HELP
+
+                header.unpublish_date:
+                  type: datetime
+                  label: PLUGIN_ADMIN.UNPUBLISHED_DATE
+                  toggleable: true
+                  help: PLUGIN_ADMIN.UNPUBLISHED_DATE_HELP
+
+                header.metadata:
+                  toggleable: true
+                  type: array
+                  label: PLUGIN_ADMIN.METADATA
+                  help: PLUGIN_ADMIN.METADATA_HELP
+                  placeholder_key: PLUGIN_ADMIN.METADATA_KEY
+                  placeholder_value: PLUGIN_ADMIN.METADATA_VALUE
+
+        advanced:
+          type: tab
+          title: PLUGIN_ADMIN.ADVANCED
+
+          fields:
+            columns:
+              type: columns
+              fields:
+                column1:
+                  type: column
+                  fields:
+
+                    overrides:
+                      type: section
+                      title: PLUGIN_ADMIN.OVERRIDES
+                      underline: true
+
+                      fields:
+
+                        header.dateformat:
+                          toggleable: true
+                          type: select
+                          size: medium
+                          selectize:
+                            create: true
+                          label: PLUGIN_ADMIN.DEFAULT_DATE_FORMAT
+                          help: PLUGIN_ADMIN.DEFAULT_DATE_FORMAT_HELP
+                          placeholder: PLUGIN_ADMIN.DEFAULT_DATE_FORMAT_PLACEHOLDER
+                          data-options@: '\Grav\Common\Utils::dateFormats'
+                          validate:
+                            type: string
+
+                        header.menu:
+                          type: text
+                          label: PLUGIN_ADMIN.MENU
+                          toggleable: true
+                          help: PLUGIN_ADMIN.MENU_HELP
+
+                        header.slug:
+                          type: text
+                          label: PLUGIN_ADMIN.SLUG
+                          toggleable: true
+                          help: PLUGIN_ADMIN.SLUG_HELP
+                          validate:
+                            message: PLUGIN_ADMIN.SLUG_VALIDATE_MESSAGE
+                            rule: slug
+
+                        header.redirect:
+                          type: text
+                          label: PLUGIN_ADMIN.REDIRECT
+                          toggleable: true
+                          help: PLUGIN_ADMIN.REDIRECT_HELP
+
+                        header.process:
+                          type: checkboxes
+                          label: PLUGIN_ADMIN.PROCESS
+                          toggleable: true
+                          config-default@: system.pages.process
+                          default:
+                            markdown: true
+                            twig: false
+                          options:
+                            markdown: Markdown
+                            twig: Twig
+                          use: keys
+
+                        header.twig_first:
+                          type: toggle
+                          toggleable: true
+                          label: PLUGIN_ADMIN.TWIG_FIRST
+                          help: PLUGIN_ADMIN.TWIG_FIRST_HELP
+                          highlight: 0
+                          options:
+                            1: PLUGIN_ADMIN.YES
+                            0: PLUGIN_ADMIN.NO
+                          validate:
+                            type: bool
+
+                        header.never_cache_twig:
+                          type: toggle
+                          toggleable: true
+                          label: PLUGIN_ADMIN.NEVER_CACHE_TWIG
+                          help: PLUGIN_ADMIN.NEVER_CACHE_TWIG_HELP
+                          highlight: 0
+                          options:
+                            1: PLUGIN_ADMIN.YES
+                            0: PLUGIN_ADMIN.NO
+                          validate:
+                            type: bool
+
+
+                        header.routable:
+                          type: toggle
+                          toggleable: true
+                          label: PLUGIN_ADMIN.ROUTABLE
+                          help: PLUGIN_ADMIN.ROUTABLE_HELP
+                          highlight: 1
+                          options:
+                            1: PLUGIN_ADMIN.ENABLED
+                            0: PLUGIN_ADMIN.DISABLED
+                          validate:
+                            type: bool
+
+                        header.cache_enable:
+                          type: toggle
+                          toggleable: true
+                          label: PLUGIN_ADMIN.CACHING
+                          highlight: 1
+                          options:
+                            1: PLUGIN_ADMIN.ENABLED
+                            0: PLUGIN_ADMIN.DISABLED
+                          validate:
+                            type: bool
+
+                        header.visible:
+                          type: toggle
+                          toggleable: true
+                          label: PLUGIN_ADMIN.VISIBLE
+                          help: PLUGIN_ADMIN.VISIBLE_HELP
+                          highlight: 1
+                          options:
+                            1: PLUGIN_ADMIN.ENABLED
+                            0: PLUGIN_ADMIN.DISABLED
+                          validate:
+                            type: bool
+
+                        header.debugger:
+                          type: toggle
+                          toggleable: true
+                          label: PLUGIN_ADMIN.DEBUGGER
+                          help: PLUGIN_ADMIN.DEBUGGER_HELP
+                          highlight: 1
+                          options:
+                            1: PLUGIN_ADMIN.ENABLED
+                            0: PLUGIN_ADMIN.DISABLED
+                          validate:
+                            type: bool
+
+                        header.template:
+                          type: text
+                          toggleable: true
+                          label: PLUGIN_ADMIN.DISPLAY_TEMPLATE
+
+                        header.append_url_extension:
+                          type: text
+                          label: PLUGIN_ADMIN.APPEND_URL_EXT
+                          toggleable: true
+                          help: PLUGIN_ADMIN.APPEND_URL_EXT_HELP
+
+
+                column2:
+                  type: column
+
+                  fields:
+
+                    routes_only:
+                      type: section
+                      title: PLUGIN_ADMIN.ROUTE_OVERRIDES
+                      underline: true
+
+                      fields:
+
+                        header.routes.default:
+                          type: text
+                          toggleable: true
+                          label: PLUGIN_ADMIN.ROUTE_DEFAULT
+
+                        header.routes.canonical:
+                          type: text
+                          toggleable: true
+                          label: PLUGIN_ADMIN.ROUTE_CANONICAL
+
+                        header.routes.aliases:
+                          type: array
+                          toggleable: true
+                          value_only: true
+                          size: large
+                          label: PLUGIN_ADMIN.ROUTE_ALIASES
+
+
+                    admin_only:
+                      type: section
+                      title: PLUGIN_ADMIN.ADMIN_SPECIFIC_OVERRIDES
+                      underline: true
+
+                      fields:
+
+                        header.admin.children_display_order:
+                          type: select
+                          label: PLUGIN_ADMIN.ADMIN_CHILDREN_DISPLAY_ORDER
+                          help: PLUGIN_ADMIN.ADMIN_CHILDREN_DISPLAY_ORDER_HELP
+                          toggleable: true
+                          classes: fancy
+                          default: 'collection'
+                          options:
+                            'default': 'Ordered by Folder name (default)'
+                            'collection': 'Ordered by Collection definition'
+
+
+                        header.order_by:
+                          type: hidden
+
+                        header.order_manual:
+                          type: hidden
+                          validate:
+                            type: commalist
+
+                        blueprint:
+                          type: blueprint

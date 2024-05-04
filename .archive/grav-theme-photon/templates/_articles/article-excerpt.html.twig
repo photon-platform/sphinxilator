@@ -1,0 +1,22 @@
+{% set excerpt = true %}
+        <article class="{{ article.template }} excerpt" data-url="{{ article.url }}">
+{% include [
+        "_articles/_block/#{ article.template }_header_excerpt.html.twig",
+        "_articles/_block/article_header_excerpt.html.twig"
+      ] with { 'article': article } %}
+{% include [
+        "_articles/_block/#{ article.template }_figure_excerpt.html.twig",
+        "_articles/_block/article_figure_excerpt.html.twig"
+      ] with { 'article': article } %}
+{% include [
+        "_articles/_block/#{ article.template }_main_excerpt.html.twig",
+        "_articles/_block/article_main_excerpt.html.twig"
+      ] with { 'article': article } %}
+{% include [
+        "_articles/_block/#{ article.template }_footer_excerpt.html.twig",
+        "_articles/_block/article_footer_excerpt.html.twig"
+      ] with { 'article': article } %}
+{% if config.system.debugger.enabled %}
+          <!-- user/themes/photon/templates/_articles/_block/article-excerpt.html.twig -->
+{% endif %}
+        </article>

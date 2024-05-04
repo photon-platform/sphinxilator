@@ -1,0 +1,78 @@
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{ page.url }}"
+      },
+      "headline": "{{ page_title }}",
+      "image": [
+        "{{ featured_image }}"
+       ],
+      "datePublished": "{{ page.date|date("Y-m-d") }}",
+      "dateModified": "{{ page.modified|date("Y-m-d") }}",
+      "author": {
+        "@type": "Organization",
+        "name": "illumiphi"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "{{ site.title }}",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "{{ base_url_absolute ~ "/images/logo.png" }}"
+        }
+      },
+      "description": "{{ page_description }}"
+    }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    "@id": "{{ config.organization.id }}",
+    "url": "{{ config.organization.url }}",
+    "name": "{{ config.organization.name }}",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ config.url }}{{ config.organization.logo }}"
+    },
+    "image": [
+      "{{ config.url }}{{ config.organization.image }}"
+     ],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "{{ config.organization.address.streetAddress }}",
+      "addressLocality": "{{ config.organization.address.addressLocality }}",
+      "addressRegion": "{{ config.organization.address.addressRegion }}",
+      "postalCode": "{{ config.organization.address.postalCode }}",
+      "addressCountry": "{{ config.organization.address.addressCountry }}"
+    },
+    "telephone": "{{ config.organization.telephone }}",
+    "servesCuisine": "{{ config.organization.servesCuisine }}",
+    "priceRange": "{{ config.organization.priceRange }}",
+    "potentialAction": {
+      "@type": "ReserveAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "{{ config.organization.reservationURL }}",
+        "inLanguage": "en-US",
+        "actionPlatform": [
+          "http://schema.org/DesktopWebPlatform",
+          "http://schema.org/IOSPlatform",
+          "http://schema.org/AndroidPlatform"
+        ]
+      },
+      "result": {
+        "@type": "FoodEstablishmentReservation",
+        "name": "Reserve table"
+      }
+    },
+
+    "openingHours": [ "Mo,Tu,We,Th 16:00-20:30" ],
+
+    ]
+  }
+  </script>

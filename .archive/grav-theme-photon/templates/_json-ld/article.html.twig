@@ -1,0 +1,45 @@
+    <!-- schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{ page.url }}"
+      },
+      "headline": "{{ page_title }}",
+      "image": [
+        "{{ featured_image }}"
+       ],
+      "datePublished": "{{ page.date|date("Y-m-d") }}",
+      "dateModified": "{{ page.modified|date("Y-m-d") }}",
+      "author": {
+        "@type": "Organization",
+        "name": "{{ page.author }}"
+      },
+      "publisher": {
+        "@type": "{{ config.organization.org_type }}",
+        "name": "{{ site.title }}",
+        "@id": "{{ config.organization.id }}",
+        "url": "{{ config.organization.url }}",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "{{ base_url_absolute }}/images/{{ config.organization.logo }}"
+        },
+        "image": [
+          "{{ base_url_absolute }}/images/{{ config.organization.image }}"
+         ],
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "{{ config.organization.address.streetAddress }}",
+          "addressLocality": "{{ config.organization.address.addressLocality }}",
+          "addressRegion": "{{ config.organization.address.addressRegion }}",
+          "postalCode": "{{ config.organization.address.postalCode }}",
+          "addressCountry": "{{ config.organization.address.addressCountry }}"
+        },
+        "telephone": "{{ config.organization.telephone }}",
+        "openingHours": [ "Mo,Tu,We,Th 16:00-20:30" ]
+      },
+      "description": "{{ page_description }}"
+    }
+    </script>

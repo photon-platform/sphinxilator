@@ -1,0 +1,42 @@
+{% macro url(article) %}
+{% set fig_img = article.header.figure.image %}
+{% if not fig_img %}
+{%   set img = article.media.images | first %}
+{%   set fig_img = img.url %}
+{% endif %}
+{% if fig_img ends with '.svg'  %}
+{%   set img = article.media.files[fig_img] %}
+        <figure>
+          {{ img.html(figure.title, figure.alt, 'svg') }}
+        </figure>
+{% elseif figure.youtube and showcase != 1 %}
+        <figure>
+          <iframe width="560" height="315" 
+            src="https://www.youtube.com/embed/{{ figure.youtube }}"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+        </figure>
+{% else %}
+{%   set filename = fig_img|split('/')|last %}
+{%   set img = article.media[filename] %}
+{%   if img %}
+        <figure>
+          {{ img.quality(50).derivatives(400, 800, 400).sizes('(max-width:26em) 24em, 24em').html(img.meta.title, img.meta.description, 'excerpt') }}
+{%       if figure.caption %}
+          <figcaption>
+            {{ figure.caption|markdown }}
+          </figcaption>
+{%       endif %}
+{%       if img.meta.description %}
+          <figcaption>
+            {{ img.meta.description|markdown }}
+            <cite>{{ img.meta.creator }} | {{img.meta.publisher }}</cite>
+          </figcaption>
+{%       endif %}
+        </figure>
+{%   endif %}
+{% endif %}
+{% endmacro %}}
+
+{% macro caption(article) %}
+{% endmacro %}}

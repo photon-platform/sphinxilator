@@ -1,0 +1,23 @@
+{# requires:
+      tax_type: tag or category or other
+      nav_title: display and aria name
+#}
+{% if config.plugins.taxonomylist.enabled %}
+{%   set tax_list = taxonomylist.get()[tax_type] %}
+{% endif %}
+      <nav aria-label="{{ nav_title }}">
+        <input type="checkbox" id="nav-{{ nav_title }}-toggle" >
+        <label for="nav-{{ nav_title }}-toggle" >{{ nav_title }}</label>
+{% if tax_list %}
+        <ul>
+{%   for tax, value in tax_list %}
+{#     tax_type is wrapped in () for eval in hash key #}
+{%     set count = taxonomy.findTaxonomy({(tax_type):tax})|length %}
+{%     set selected = uri.param(tax_type) == tax ? ' aria-selected="true"' : '' %}
+          <li>
+            <a href="/search/{{ tax_type }}/{{ tax_type }}{{ config.system.param_sep }}{{ tax|e('url') }}" {{ selected }}>{{ tax }} [{{ count }}]</a>
+          </li>
+{%   endfor %}
+        </ul>
+{% endif %}
+      </nav>

@@ -1,0 +1,23 @@
+    <header>
+      <div class="logo">
+        <a href="{{ home_url }}" >
+{% if config.organization.logo %}
+          {{ media['image://' ~  config.organization.logo ].resize(128).html() }}
+{% endif %}
+          <h1>{{ site.title }}</h1>
+{% if theme.subtitle  %}
+          <h2>{{ theme.subtitle }}</h2>
+{% endif %}
+        </a>
+      </div>
+{% set menu_header = page.collection(
+      {
+        'items': { '@taxonomy': {'photon': 'header'} },
+        'order': {'by': 'default', 'dir': 'asc'},
+        'url_taxonomy_filters': false
+      }
+    ) %}
+{% include '_sections/nav.html.twig'
+        with {'nav_list':menu_header, 'nav_title':'Header'} %}
+{% include '_asides/motto.html.twig' %}
+    </header>

@@ -1,0 +1,11 @@
+        <footer>
+{% include [
+        "_articles/_block/#{ article.template }_data.html.twig",
+        "_articles/_block/article_data.html.twig"
+      ] with { 'article': article } %}
+{# {% include '_articles/_block/article_footer/aside_details.html.twig' %} #}
+{% include '_articles/_block/article_footer/list-featured-descendants.html.twig' %}
+{% include '_articles/_block/article_footer/aside_categories.html.twig' %}
+{% include '_articles/_block/article_footer/aside_tags.html.twig' %}
+{% include '_articles/_block/article_footer/aside_share.html.twig' %}
+        </footer>

@@ -1,0 +1,29 @@
+      <article class="{{ article.template }}" data-url="{{ article.url }}">
+{% if not excerpt %}
+{%   include '_articles/_block/article_nav.html.twig' 
+        with { 'article': article } %}
+{% endif %}
+{% include [
+       "_articles/_block/#{ article.template }_header.html.twig",
+       "_articles/_block/article_header.html.twig"
+     ] with { 'article': article } %}
+{% include [
+        "_articles/_block/#{ article.template }_figure.html.twig",
+        "_articles/_block/article_figure.html.twig"
+      ] with { 'article': article } %}
+{% include [
+        "_articles/_block/#{ article.template }_main.html.twig",
+        "_articles/_block/article_main.html.twig"
+      ] with { 'article': article } %}
+{% include [
+        "_articles/_block/#{ article.template }_footer.html.twig",
+        "_articles/_block/article_footer.html.twig"
+      ] with { 'article': article } %}
+{% include [
+        "_articles/_block/#{ article.template }_gallery.html.twig",
+        "_articles/_block/article_gallery.html.twig"
+      ] with { 'article': article } %}
+{% if config.system.debugger.enabled %}
+        <!-- user/themes/photon/templates/_articles/_block/article.html.twig -->
+{% endif %}
+      </article>

@@ -1,0 +1,29 @@
+{% if config.organization.owa.siteId and not (base_url_absolute ends with ".local") %}
+    <!-- analytics -->
+    <!-- {{ base_url_absolute }} -->
+    <script type="text/javascript">
+    //<![CDATA[
+    var owa_baseUrl = '{{ config.organization.owa.siteUrl|default('https://logs.photon-platform.net/') }}';
+    var owa_cmds = owa_cmds || [];
+    owa_cmds.push(['setSiteId', '{{ config.organization.owa.siteId }}']);
+{% if config.organization.owa.trackPageView %}
+    owa_cmds.push(['setPageType', '{{ page.template }}']);
+    owa_cmds.push(['setPageTitle', '{{ page.title }}']);
+    owa_cmds.push(['trackPageView']);
+{% endif %}
+{% if config.organization.owa.trackCLicks %}
+    owa_cmds.push(['trackCLicks']);
+{% endif %}
+{% if config.organization.owa.trackDomStream %}
+    owa_cmds.push(['trackDomStream']);
+{% endif %}
+
+    (function() {
+        var _owa = document.createElement('script'); _owa.type = 'text/javascript'; _owa.async = true;
+        owa_baseUrl = ('https:' == document.location.protocol ? window.owa_baseSecUrl || owa_baseUrl.replace(/http:/, 'https:') : owa_baseUrl );
+        _owa.src = owa_baseUrl + 'modules/base/js/owa.tracker-combined-min.js';
+        var _owa_s = document.getElementsByTagName('script')[0]; _owa_s.parentNode.insertBefore(_owa, _owa_s);
+    }());
+    //]]>
+    </script>
+{% endif %}

@@ -1,0 +1,10 @@
+{% set nav_title = 'Recent' %}
+{% set options = { 
+    'items': {'@root.descendants': '/'}, 
+    'limit': 5, 
+    'order': {'by': 'modified', 'dir': 'desc'},
+    'url_taxonomy_filters': false
+} %}
+{% set nav_list = page.collection(options) %}
+{% include '_sections/nav.html.twig' 
+        with {'nav_list':nav_list, 'nav_title':nav_title} %}

@@ -1,0 +1,5 @@
+# Grav Specific
+.sass-cache
+composer.lock
+*.swp
+tags

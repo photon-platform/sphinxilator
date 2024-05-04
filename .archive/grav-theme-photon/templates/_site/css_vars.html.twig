@@ -1,0 +1,33 @@
+    <!-- CSS vars -->
+    <style>
+
+    :root {
+      --fitz: {{ config.style.fitz }};
+      --col: {{ config.style.col }};
+      {# --header-height: {{ config.style.header_height }}; #}
+    }
+
+    :root {
+      --hue-key: {{ config.style.color.key.hue }};
+      --hue-1: {{ config.style.color.key.hue + config.style.color.1.hueOffset }};
+      --hue-2: {{ config.style.color.key.hue + config.style.color.2.hueOffset }};
+
+      --sat: {{ config.style.color.saturation }}%;
+
+      --lighter: {{ config.style.color.lightness.lighter }}%;
+      --light: {{ config.style.color.lightness.light }}%;
+      --mid: {{ config.style.color.lightness.mid }}%;
+      --dark: {{ config.style.color.lightness.dark }}%;
+      --darker: {{ config.style.color.lightness.darker }}%;
+    }
+
+    :root {
+      --color-fg: {{ config.style.color.foreground }};
+      --color-bg: {{ config.style.color.background }};
+
+      --color: var(--color-fg);
+      --bg: var(--color-bg);
+
+    }
+
+    </style>

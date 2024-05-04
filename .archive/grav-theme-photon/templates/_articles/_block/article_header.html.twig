@@ -1,0 +1,12 @@
+        <header>
+          <h1>
+{% if article.active %}
+            {{ article.title }}
+{% else %}
+            <a href="{{ article.url }}">{{ article.title }}</a>
+{% endif %}
+          </h1>
+{% if article.header.subtitle %}
+          <h2>{{ article.header.subtitle }}</h2>
+{% endif %}
+        </header>

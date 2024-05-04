@@ -1,0 +1,25 @@
+{% if article.nextSibling.url or article.prevSibling.url %}
+{%   set prevPage = article.nextSibling %}
+{%   set nextPage = article.prevSibling %}
+{% else %}
+{%   set siblings = page.collection(
+      {'items':{ '@taxonomy':{'photon': 'header'} },
+        'order': {'by': 'default', 'dir': 'asc'}}
+    ) %}
+{%   set prevPage = siblings.nextSibling(page.path) %}
+{%   set nextPage = siblings.prevSibling(page.path) %}
+{% endif %}
+          <nav class="context">
+            <div class="prev">
+{% if prevPage.url %}
+              <a href="{{ prevPage.url }}" class="prev" data-tooltip="{{ prevPage.title }}" title="{{ prevPage.title }}" >Prev</a>
+{% endif %}
+            </div>
+{% include '_articles/_block/breadcrumbs.html.twig' 
+        with { 'article': article } %}
+            <div class="next">
+{% if nextPage.url %}
+              <a href="{{ nextPage.url }}" class="next" data-tooltip="{{ nextPage.title }}" title="{{ nextPage.title }}" >Next</a>
+{% endif %}
+            </div>
+          </nav>

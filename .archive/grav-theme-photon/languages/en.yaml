@@ -1,0 +1,7 @@
+PHOTON:
+  FEATURED: Featured
+  SHOWCASE: Showcase
+  article:
+    _label: Details
+  post:
+    _label: Details
