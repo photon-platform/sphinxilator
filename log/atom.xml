@@ -2,8 +2,21 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
   <id>https://photon-platform.github.io/sphinxilator</id>
   <title>photon-platform • sphinxilator</title>
-  <updated>2024-05-04T23:52:25.230898+00:00</updated>
+  <updated>2024-05-04T23:56:44.561584+00:00</updated>
   <link href="https://photon-platform.github.io/sphinxilator"/>
   <link href="https://photon-platform.github.io/sphinxilator/log/atom.xml" rel="self"/>
   <generator uri="https://ablog.readthedocs.org/" version="unknown.dev">ABlog</generator>
+  <entry>
+    <id>https://photon-platform.github.io/sphinxilator/log/24.125-164141/</id>
+    <title>introducing sphinxilator</title>
+    <updated>2024-05-04T16:41:41+00:00</updated>
+    <content type="html">&lt;div class="ablog-post-excerpt docutils container"&gt;
+&lt;p&gt;&lt;strong&gt;consolidating configuration, themes, and extensions for Sphinx&lt;/strong&gt;&lt;/p&gt;
+&lt;/div&gt;
+</content>
+    <link href="https://photon-platform.github.io/sphinxilator/log/24.125-164141/"/>
+    <summary>consolidating configuration, themes, and extensions for Sphinx</summary>
+    <category term="intro" label="intro"/>
+    <published>2024-05-04T16:41:41+00:00</published>
+  </entry>
 </feed>
