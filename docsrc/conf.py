@@ -1,9 +1,8 @@
-from ablog.conf import *
+#  from ablog.conf import *
+from photon_platform.sphinxilator.global_conf import *
 import photon_platform.sphinxilator as module
+
 version = module.__version__
-
-import photon_platform.sphinxilator.theme
-
 
 org = "photon-platform"
 org_name = "photon-platform"
