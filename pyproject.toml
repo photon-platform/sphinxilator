@@ -18,8 +18,12 @@ dependencies = [
     "jinja2",
 ]
 
-[project.scripts]
-sphinxilator = "photon_platform.sphinxilator.__main__:run"
+# [project.scripts]
+# sphinxilator = "photon_platform.sphinxilator.__main__:run"
+
+[project.entry-points."sphinx.html_themes"]
+sphinxilator_theme = "photon_platform.sphinxilator.theme"
+
 
 [build-system]
 requires = ["setuptools", "setuptools-scm"]
