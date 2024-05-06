@@ -1,6 +1,6 @@
 
-photon_platform.sphinxilator
-============================
+modules
+=======
 
 .. automodule:: photon_platform.sphinxilator
    :members:
