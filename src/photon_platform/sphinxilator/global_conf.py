@@ -164,6 +164,7 @@ extensions = [
     "sphinx.ext.todo",
     "sphinx.ext.viewcode",
     "sphinxcontrib.youtube",
+    #  "sphinxcontrib.bibtex",
     "ablog",
     "myst_parser",
     "sphinx_revealjs",
@@ -174,7 +175,7 @@ extensions = [
     #  "sphinxcontrib.oembed",
     #  "sphinxcontrib.sass",
     "sphinxext.opengraph",
-
+    "sphinx_carousel.carousel",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -390,3 +391,6 @@ autodoc_default_options = {
 }
 
 html_permalinks = True
+
+#  bibtex_bibfiles = ['refs.bib']
+
