@@ -16,6 +16,7 @@ dependencies = [
     "textual",
     "rich",
     "jinja2",
+    "sphinx-carousel",
 ]
 
 # [project.scripts]
