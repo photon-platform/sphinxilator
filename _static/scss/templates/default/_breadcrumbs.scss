@@ -1,0 +1,81 @@
+// Breadcrumbs and Page Navigation Buttons
+
+div[role="navigation"][aria-label="Page navigation"] {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 1em;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 1em;
+
+  hr {
+    display: none; // The flex layout and border makes this unnecessary
+  }
+
+  .wy-breadcrumbs {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+
+    li {
+      margin: 0;
+      padding: 0 0.5em;
+      display: inline-block;
+
+      &::after {
+        content: '/';
+        margin-left: 0.5em;
+        color: var(--text-color);
+      }
+
+      &:last-child::after {
+        content: '';
+      }
+
+      &.wy-breadcrumbs-aside {
+        margin-left: auto; // Pushes it to the right
+        padding-right: 0;
+        &::after {
+          content: '';
+        }
+      }
+    }
+
+    a.icon-home::before {
+      font-family: var(--font-icon);
+      content: 'H'; // Placeholder for home icon
+      font-size: 1.2em;
+      padding-right: 0.5em;
+    }
+  }
+
+  .rst-breadcrumbs-buttons {
+    display: flex;
+    gap: 1em;
+
+    .btn {
+      color: var(--link-color);
+      border: 1px solid var(--border-color);
+      padding: 0.5em 1em;
+      border-radius: 0.25em;
+      text-decoration: none;
+      white-space: nowrap;
+
+      &:hover {
+        color: var(--link-hover-color);
+        background: var(--bg-alt-color);
+        border-color: var(--link-hover-color);
+      }
+
+      .fa {
+        // Hide the default RTD theme icons
+        display: none;
+      }
+    }
+  }
+}

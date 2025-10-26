@@ -3,6 +3,8 @@
     display: flex;
     flex-flow: row wrap;
     
+    @import 'navigation';
+
     > .logo {
       flex: 1;
       a {
