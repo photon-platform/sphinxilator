@@ -1,6 +1,16 @@
 changelog
 =========
 
+0.0.3
+-----
+*2025-10-26*
+
+**added**
+
++ Integrated `sphinx_rtd_theme` navigation, including toctree and sticky navigation.
++ Integrated `sphinx_rtd_theme` search functionality with a custom search page.
++ Added breadcrumbs and previous/next buttons for improved navigation.
+
 0.0.2
 -----
 *2025-10-26*

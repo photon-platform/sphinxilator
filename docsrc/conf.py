@@ -32,6 +32,7 @@ extensions = [
     "sphinx_revealjs.ext.footnotes",
     "sphinxext.opengraph",
     "sphinx_carousel.carousel",
+    "sphinxcontrib.jquery",
 ]
 
 templates_path = ["_templates", ablog.get_html_templates_path()]
@@ -64,6 +65,7 @@ html_context = {
     "theme_collapse_navigation": False,
     "theme_includehidden": True,
     "theme_titles_only": False,
+    "theme_sticky_navigation": True,
 }
 
 # -- ABlog Options -----------------------------------------------------------

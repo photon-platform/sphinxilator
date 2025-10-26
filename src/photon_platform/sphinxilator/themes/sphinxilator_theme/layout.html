@@ -17,10 +17,6 @@
   {%- for css_file in css_files %}
     {{ css_tag(css_file) }}
   {%- endfor %}
-  <script id="documentation_options" data-url_root="{{ url_root }}" src="{{ pathto('_static/documentation_options.js', 1) }}"></script>
-  {%- for scriptfile in script_files %}
-    {{ js_tag(scriptfile) }}
-  {%- endfor %}
 </head>
 <body class="photon">
 
@@ -35,14 +31,16 @@
       </a>
     </div>
     <nav>
-      {#- Main navigation from toctree -#}
-      {%- set toctree = toctree(maxdepth=theme_navigation_depth|int,
-                                collapse=theme_collapse_navigation|tobool,
-                                includehidden=theme_includehidden|tobool,
-                                titles_only=theme_titles_only|tobool) %}
-      {%- if toctree %}
-        {{ toctree }}
-      {%- endif %}
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+        {#- Main navigation from toctree -#}
+        {%- set toctree = toctree(maxdepth=theme_navigation_depth|int,
+                                  collapse=theme_collapse_navigation|tobool,
+                                  includehidden=theme_includehidden|tobool,
+                                  titles_only=theme_titles_only|tobool) %}
+        {%- if toctree %}
+          {{ toctree }}
+        {%- endif %}
+      </div>
     </nav>
     <div class="motto">
       {#- Placeholder for motto/tagline -#}
@@ -50,6 +48,7 @@
   </header>
 
   <main>
+    {% include "breadcrumbs.html" %}
     <div role="main" class="document">
       {% block body %}{% endblock %}
     </div>
@@ -71,17 +70,38 @@
   </div>
 
   <footer>
+    {%- if (theme_prev_next_buttons_location == 'bottom' or theme_prev_next_buttons_location == 'both') and (next or prev) %}
+      <div class="rst-footer-buttons" role="navigation" aria-label="{{ _('Footer') }}">
+        {%- if prev %}
+          <a href="{{ prev.link|e }}" class="btn btn-neutral float-left" title="{{ prev.title|striptags|e }}" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> {{ _('Previous') }}</a>
+        {%- endif %}
+        {%- if next %}
+          <a href="{{ next.link|e }}" class="btn btn-neutral float-right" title="{{ next.title|striptags|e }}" accesskey="n" rel="next">{{ _('Next') }} <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        {%- endif %}
+      </div>
+    {%- endif %}
+    <hr/>
     <div role="contentinfo">
       <p>
         {%- if show_copyright %}
           &copy; Copyright {{ copyright }}.
         {%- endif %}
-        {%- if show_sphinx %}
-          Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>.
-        {%- endif %}
       </p>
     </div>
   </footer>
+
+  {#- JavaScript #}
+  {%- block scripts %}
+    {%- for scriptfile in script_files %}
+      {{ js_tag(scriptfile) }}
+    {%- endfor %}
+    <script src="{{ pathto('_static/js/theme.js', 1) }}"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable({{ 'true' if theme_sticky_navigation|tobool else 'false' }});
+        });
+    </script>
+  {%- endblock %}
 
 </body>
 </html>

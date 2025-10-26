@@ -7,7 +7,7 @@ This document outlines the development plan for `sphinxilator`, a centralized pl
 -   **[x] Initialize New Theme:** Create a new theme within `sphinxilator` that will serve as the foundation for the unified documentation platform.
 -   **[x] Integrate `sphinx_rtd_theme`:**
     -   **[x] HTML Structure:** Use the HTML structure from `sphinx_rtd_theme` as the base for the new theme's templates (`layout.html`, `footer.html`, etc.).
-    -   **[ ] Navigation:** Port the navigation logic from `sphinx_rtd_theme` to the new theme, ensuring it is robust and customizable.
+    -   **[x] Navigation:** Port the navigation logic from `sphinx_rtd_theme` to the new theme, ensuring it is robust and customizable.
     -   **[x] Search:** Integrate the search functionality from `sphinx_rtd_theme`, including its templates and JavaScript.
 -   **[x] Integrate `grav-theme-photon` Styling:**
     -   **[x] SASS Build:** Set up a SASS build process for the new theme.

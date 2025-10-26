@@ -1,56 +1,41 @@
 {#
-    basic/search.html
-    ~~~~~~~~~~~~~~~~~
+    sphinxilator/search.html
+    ~~~~~~~~~~~~~~~~~~~~~~~~
 
-    Template for the search page.
-
-    :copyright: Copyright 2007-2013 by the Sphinx team, see AUTHORS.
-    :license: BSD, see https://github.com/sphinx-doc/sphinx/blob/master/LICENSE for details.
+    Template for the search page, adapted for the sphinxilator theme.
 #}
 {%- extends "layout.html" %}
 {% set title = _('Search') %}
 {% set display_vcs_links = False %}
-{%- block scripts %}
-    {{ super() }}
-    <script src="{{ pathto('_static/searchtools.js', 1) }}"></script>
-    <script src="{{ pathto('_static/language_data.js', 1) }}"></script>
-{%- endblock %}
-{% block footer %}
-  <script>
-    jQuery(function() { Search.loadIndex("{{ pathto('searchindex.js', 1) }}"); });
-  </script>
-  {# this is used when loading the search index using $.ajax fails,
-     such as on Chrome for documents on localhost #}
-  <script id="searchindexloader"></script>
-  {{ super() }}
-{% endblock %}
+
 {% block body %}
   <noscript>
-  <div id="fallback" class="admonition warning">
-    <p class="last">
-      {% trans trimmed %}Please activate JavaScript to enable the search
-      functionality.{% endtrans %}
-    </p>
-  </div>
+    <div id="fallback" class="admonition warning">
+      <p class="last">
+        {% trans trimmed %}Please activate JavaScript to enable the search functionality.{% endtrans %}
+      </p>
+    </div>
   </noscript>
 
-  {% if search_performed %}
-    {# Translators: Search is a noun, not a verb #}
-    <h2>{{ _('Search Results') }}</h2>
-    {% if not search_results %}
-      <p>{{ _('Your search did not match any documents. Please make sure that all words are spelled correctly and that you\'ve selected enough categories.') }}</p>
-    {% endif %}
-  {% endif %}
+  <h2>{{ _('Search Results') }}</h2>
+
   <div id="search-results">
-  {% if search_results %}
-    <ul>
-    {% for href, caption, context in search_results %}
-      <li>
-        <a href="{{ pathto(item.href) }}">{{ caption }}</a>
-        <p class="context">{{ context|e }}</p>
-      </li>
-    {% endfor %}
-    </ul>
-  {% endif %}
+    {#- This is where the JavaScript will inject the results -#}
   </div>
+{% endblock %}
+
+{% block scripts %}
+  {{ super() }} {#- This is crucial! It includes all scripts from layout.html (like jQuery) first -#}
+
+  {#- The search page requires these specific scripts -#}
+  <script src="{{ pathto('_static/searchtools.js', 1) }}"></script>
+  <script src="{{ pathto('_static/language_data.js', 1) }}"></script>
+
+  {#- Now we can initialize the search -#}
+  <script>
+    jQuery(function() {
+      Search.loadIndex("{{ pathto('searchindex.js', 1) }}");
+      Search.init();
+    });
+  </script>
 {% endblock %}
