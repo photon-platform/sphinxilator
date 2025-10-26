@@ -1,21 +1,19 @@
 changelog
 =========
 
-0.1.0 
+0.0.2
 -----
-*2023-11-15*
-
-**fixed**
-
-.. + Fixed bug in data processing (`#42 <https://github.com/example/repo/issues/42>`_)
-.. + Improved error handling in API calls
+*2025-10-26*
 
 **added**
 
-.. + Fixed bug in data processing (`#42 <https://github.com/example/repo/issues/42>`_)
-.. + Improved error handling in API calls
++ Created a new, unified `sphinxilator_theme` to consolidate documentation styling.
++ Ported the basic HTML structure and templates from `sphinx_rtd_theme`.
++ Integrated the SASS styles and structure from `grav-theme-photon`.
++ Implemented a new semantic HTML layout (`<header>`, `<main>`, `<asides>`).
++ Established a simplified, dark-theme-first color palette.
++ Added a SASS build system to compile theme assets.
 
-**changed**
-
-.. + Fixed bug in data processing (`#42 <https://github.com/example/repo/issues/42>`_)
-.. + Improved error handling in API calls
+0.1.0
+-----
+*2023-11-15*

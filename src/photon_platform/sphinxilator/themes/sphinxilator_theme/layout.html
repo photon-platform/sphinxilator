@@ -1,0 +1,87 @@
+{#
+   Sphinxilator Theme layout.html
+   Based on the semantic structure of grav-theme-photon
+#}
+{%- set url_root = pathto('', 1) %}
+{%- if url_root == '#' %}{% set url_root = '' %}{% endif %}
+{%- set lang_attr = 'en' if language == None else (language | replace('_', '-')) %}
+
+<!DOCTYPE html>
+<html lang="{{ lang_attr }}">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ title|striptags|e }} &mdash; {{ docstitle|e }}</title>
+  <link rel="stylesheet" href="{{ pathto('_static/css/sphinxilator.css', 1) }}" type="text/css" />
+  <link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}" type="text/css" />
+  {%- for css_file in css_files %}
+    {{ css_tag(css_file) }}
+  {%- endfor %}
+  <script id="documentation_options" data-url_root="{{ url_root }}" src="{{ pathto('_static/documentation_options.js', 1) }}"></script>
+  {%- for scriptfile in script_files %}
+    {{ js_tag(scriptfile) }}
+  {%- endfor %}
+</head>
+<body class="photon">
+
+  <header>
+    <div class="logo">
+      <a href="{{ pathto(master_doc) }}">
+        {%- if logo_url %}
+          <img src="{{ logo_url }}" class="logo" alt="Logo"/>
+        {%- else %}
+          <h1>{{ project }}</h1>
+        {%- endif %}
+      </a>
+    </div>
+    <nav>
+      {#- Main navigation from toctree -#}
+      {%- set toctree = toctree(maxdepth=theme_navigation_depth|int,
+                                collapse=theme_collapse_navigation|tobool,
+                                includehidden=theme_includehidden|tobool,
+                                titles_only=theme_titles_only|tobool) %}
+      {%- if toctree %}
+        {{ toctree }}
+      {%- endif %}
+    </nav>
+    <div class="motto">
+      {#- Placeholder for motto/tagline -#}
+    </div>
+  </header>
+
+  <main>
+    <div role="main" class="document">
+      {% block body %}{% endblock %}
+    </div>
+  </main>
+
+  <div class="asides">
+    <aside>
+      <h3>Search</h3>
+      {%- include "searchbox.html" %}
+    </aside>
+    <aside>
+      {#- Recent posts from ABlog -#}
+      {%- include "recentposts.html" %}
+    </aside>
+    <aside>
+      {#- Archives from ABlog -#}
+      {%- include "archives.html" %}
+    </aside>
+  </div>
+
+  <footer>
+    <div role="contentinfo">
+      <p>
+        {%- if show_copyright %}
+          &copy; Copyright {{ copyright }}.
+        {%- endif %}
+        {%- if show_sphinx %}
+          Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>.
+        {%- endif %}
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>

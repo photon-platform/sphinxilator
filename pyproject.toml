@@ -17,6 +17,8 @@ dependencies = [
     "rich",
     "jinja2",
     "sphinx-carousel",
+    "sphinxcontrib-jquery",
+    "libsass",
 ]
 
 # [project.scripts]

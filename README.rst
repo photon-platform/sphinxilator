@@ -30,6 +30,8 @@ Features
 
 - **Streamlined Project Integration**: Provides a structured approach for integrating `sphinxilator` into existing and new Sphinx projects, ensuring consistency and efficiency in documentation deployment.
 
+- **Content Organization**: Includes a CLI tool to help organize content, especially for code documentation, by scanning the `src` directory and generating RST stubs for modules.
+
 
 Installation
 ------------
@@ -43,15 +45,14 @@ You can install **sphinxilator** using pip:
 Usage
 -----
 
-
-
-After installation, you can use the ``sphinxilator`` command to create a new project:
+After installation, you can use the ``sphinxilator`` command to manage your documentation projects:
 
 .. code-block:: bash
 
-   sphinxilator 
-
-.. todo:: TODO: list arguments
+   sphinxilator new  # create a new documentation project
+   sphinxilator build  # build the documentation for a project
+   sphinxilator deploy  # deploy the documentation to GitHub Pages
+   sphinxilator organize  # organize content, especially for code documentation
 
 Dependencies
 ------------

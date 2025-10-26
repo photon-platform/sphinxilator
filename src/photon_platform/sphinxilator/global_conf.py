@@ -258,7 +258,6 @@ todo_include_todos = True
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 
-#  html_theme = "photonsphinx"
 html_theme = "sphinxilator_theme"
 
 
@@ -347,14 +346,6 @@ html_static_path = ["_static"]
 htmlhelp_basename = "help_doc"
 
 
-#  html_theme_options = {
-#  "html_logo": "logo.png",
-#  "logo": "logo.png",
-#  "logo_name": True,
-#  "github_user": "photon-platform",
-#  "github_repo": "photon-ablog",
-#  "github_button": True,
-#  }
 html_theme_options = {
     "display_version": False,
     "navigation_depth": -1,
@@ -393,4 +384,3 @@ autodoc_default_options = {
 html_permalinks = True
 
 #  bibtex_bibfiles = ['refs.bib']
-
