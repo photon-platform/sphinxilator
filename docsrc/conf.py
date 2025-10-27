@@ -35,6 +35,8 @@ extensions = [
     "sphinxcontrib.jquery",
 ]
 
+autosummary_generate = True
+
 templates_path = ["_templates", ablog.get_html_templates_path()]
 source_suffix = {
     ".rst": "restructuredtext",

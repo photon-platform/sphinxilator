@@ -1,10 +1,7 @@
+Code
+====
 
-modules
-=======
+.. toctree::
+   :maxdepth: 2
 
-.. automodule:: photon_platform.sphinxilator
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-
+   package

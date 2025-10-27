@@ -40,6 +40,7 @@
   {%- for css_file in extra_css_files %}
     <link rel="stylesheet" href="{{ pathto(css_file, 1)|escape }}" type="text/css" />
   {%- endfor -%}
+  <link rel="stylesheet" href="{{ pathto('_static/css/custom.css', 1) }}" type="text/css" />
 
   {#- FAVICON
       favicon_url is the only context var necessary since Sphinx 4.
@@ -90,7 +91,7 @@
         <script src="{{ pathto(scriptfile, 1) }}"></script>
       {%- endfor %}
     {%- endif %}
-    <script src="{{ pathto('_static/js/theme.js', 1) }}"></script>
+    <script src="{{ pathto('_static/js/custom.js', 1) }}"></script>
 
     {#- OPENSEARCH #}
     {%- if use_opensearch %}
