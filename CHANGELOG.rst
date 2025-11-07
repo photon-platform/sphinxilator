@@ -1,6 +1,19 @@
 changelog
 =========
 
+0.1.2
+-----
+*2025-11-07*
+
+**changed**
+
++ Refactored the `publish` tool to use a `click`-based command-line interface with `build` and `test` commands.
++ Standardized the theme name to `photon` and the main SASS file to `styles.scss`.
++ Consolidated all theme and Sphinx configurations into `global_conf.py` to simplify project-level `conf.py` files.
++ Made the build process context-aware, allowing it to be run from any directory within a git repository.
++ Integrated SASS compilation into the build process.
++ Removed the old, unused `theme` directory.
+
 0.1.1
 -----
 *2025-11-07*

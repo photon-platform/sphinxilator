@@ -19,13 +19,14 @@ dependencies = [
     "sphinx-carousel",
     "sphinxcontrib-jquery",
     "libsass",
+    "click",
 ]
 
-# [project.scripts]
-# publish = "photon_platform.publish.__main__:run"
+[project.scripts]
+publish = "photon_platform.publish.__main__:run"
 
 [project.entry-points."sphinx.html_themes"]
-publish_theme = "photon_platform.publish.theme"
+photon = "photon_platform.publish.themes.photon"
 
 
 [build-system]

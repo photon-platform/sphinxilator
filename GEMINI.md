@@ -8,7 +8,12 @@ Publish integrates custom components, themes, and configurations into a unified 
 
 ## Index
 
+
+
 -   `publish.py`: Core logic for the Publish tool.
+
 -   `global_conf.py`: A global `conf.py` that can be imported into local configurations.
--   `theme/`: Contains the theme files for the Sphinx documentation.
--   `app.py`: The main Textual application.
+
+-   `themes/photon/`: Contains the theme files for the Sphinx documentation.
+
+-   `app.py`: The main `click`-based command-line interface.

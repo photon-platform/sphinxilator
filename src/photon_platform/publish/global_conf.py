@@ -8,6 +8,7 @@ override any values in the project's ``conf.py``
 in general this should just leave the peronalized elements
 """
 import ablog
+import os
 
 #  import photonsphinx
 #  import sphinx_rtd_theme
@@ -176,7 +177,10 @@ extensions = [
     #  "sphinxcontrib.sass",
     "sphinxext.opengraph",
     "sphinx_carousel.carousel",
+    "sphinxcontrib.jquery",
 ]
+
+autosummary_generate = True
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates", ablog.get_html_templates_path()]
@@ -258,11 +262,11 @@ todo_include_todos = True
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 
-html_theme = "publish_theme"
+html_theme = "photon"
 
 
 # Add any paths that contain custom themes here, relative to this directory.
-#  html_theme_path = [photonsphinx.get_path()]
+html_theme_path = [os.path.abspath(os.path.join(os.path.dirname(__file__), 'themes'))]
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
@@ -350,6 +354,10 @@ html_theme_options = {
     "display_version": False,
     "navigation_depth": -1,
     "prev_next_buttons_location": "both",
+    "collapse_navigation": False,
+    "includehidden": True,
+    "titles_only": False,
+    "sticky_navigation": True,
 }
 
 ablog_website = "../docs"

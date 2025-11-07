@@ -46,10 +46,8 @@ After installation, you can use the ``publish`` command to manage your documenta
 
 .. code-block:: bash
 
-   publish new  # create a new documentation project
    publish build  # build the documentation for a project
-   publish deploy  # deploy the documentation to GitHub Pages
-   publish organize  # organize content, especially for code documentation
+   publish test  # build and serve the documentation locally
 
 Dependencies
 ------------
@@ -57,8 +55,9 @@ Dependencies
 **publish** depends on the following Python packages:
 
 - Sphinx
-- sphinx-rtd-theme
 - Ablog
+- click
+- libsass
 
 Contributing
 ------------
