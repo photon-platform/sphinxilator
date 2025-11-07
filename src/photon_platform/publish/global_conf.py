@@ -1,4 +1,20 @@
 """
+Sass is not building correctly:
+
+Sass is not building correctly:
+
+Sass is not building correctly:
+
+Sass is not building correctly:
+
+Sass is not building correctly:
+
+Sass is not building correctly:
+
+Sass is not building correctly:
+
+Sass is not building correctly:
+
 default config setting for ablog
 
 ``from ablog.conf import *``
@@ -367,7 +383,6 @@ post_date_format_short = "%y.%j"
 intersphinx_mapping = {
     "python": ("https://docs.python.org/3.9", None),
     "sympy": ("https://docs.sympy.org/latest", None),
-    "matplotlib": ("https://matplotlib.org/stable", None),
 }
 
 html_logo = "_static/logo.png"
