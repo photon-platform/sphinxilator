@@ -1,5 +1,5 @@
 [project]
-name = "photon-platform-sphinxilator"
+name = "photon-platform-publish"
 dynamic = ["version"]
 authors = [
   { name="phi ARCHITECT", email="github@phiarchitect.com" },
@@ -22,10 +22,10 @@ dependencies = [
 ]
 
 # [project.scripts]
-# sphinxilator = "photon_platform.sphinxilator.__main__:run"
+# publish = "photon_platform.publish.__main__:run"
 
 [project.entry-points."sphinx.html_themes"]
-sphinxilator_theme = "photon_platform.sphinxilator.theme"
+publish_theme = "photon_platform.publish.theme"
 
 
 [build-system]
@@ -38,9 +38,10 @@ include = ["photon_platform"]
 namespaces = true
 
 [tool.setuptools.dynamic]
-version = {attr = "photon_platform.sphinxilator.__version__"}
+version = {attr = "photon_platform.publish.__version__"}
 
 [project.urls]
-"Website" = "https://photon-platform.github.io/sphinxilator"
-"Repository" = "https://github.com/photon-platform/sphinxilator"
-"Issues" = "https://github.com/photon-platform/sphinxilator/issues"
+"Homepage" = "https://photon-platform.github.io/publish"
+"Website" = "https://photon-platform.github.io/publish"
+"Repository" = "https://github.com/photon-platform/publish"
+"Issues" = "https://github.com/photon-platform/publish/issues"

@@ -1,72 +1,71 @@
-sphinxilator
-============
+publish
+=======
 
+.. image:: https://img.shields.io/pypi/v/photon-platform-publish.svg
+   :target: https://pypi.python.org/pypi/photon-platform-publish
 
-> all the tools and themes for publishing with Sphinx
+publish is a consolidated repository designed to streamline and enhance
+the Sphinx documentation framework.
 
-sphinxilator is a consolidated repository designed to streamline and enhance
-the Sphinx documentation framework across various projects. It integrates
-custom components, themes, and configurations into a unified system,
-facilitating easier management and deployment of documentation websites. This
-repository includes a global configuration setup, allowing for dynamic
-adjustments per project, and a robust integration of converted Grav themes
-using Jinja templates. Additionally, sphinxilator extends Ablog to support
-diverse content types like events and tasks, making it a versatile tool for any
-Sphinx-based documentation needs.
-
-
-Features
+Overview
 --------
 
-- **Dynamic Configuration**: Utilizes a global `conf.py` that can be imported into local configurations for dynamic, project-specific settings.
+This project integrates custom components, themes, and configurations into a
+unified system, making it easier to manage Sphinx projects. It supports
+project-specific settings, conversion of Grav themes into Jinja templates, and
+extends Ablog to support diverse content types.
 
-- **Template Conversion**: Includes tools and guidelines for converting Grav Twig templates into Jinja, ensuring seamless integration with Sphinx.
+Key Features
+------------
 
-- **Integrated Styles and Scripts**: Supports the incorporation of custom CSS and JavaScript from Grav themes into Sphinx projects, maintaining a consistent look and feel across documentation sites.
-
-- **Enhanced Ablog**: Modifies Ablog to handle a wider array of content types, including events, tasks, and updates, alongside traditional blog posts.
-
-- **Modular Design**: Designed to be flexible and modular, allowing for easy adaptations and extensions to meet the specific needs of various documentation projects.
-
-- **Streamlined Project Integration**: Provides a structured approach for integrating `sphinxilator` into existing and new Sphinx projects, ensuring consistency and efficiency in documentation deployment.
-
-- **Content Organization**: Includes a CLI tool to help organize content, especially for code documentation, by scanning the `src` directory and generating RST stubs for modules.
-
+- **Unified Theme**: A single, customizable theme for all PHOTON platform
+  documentation, ensuring a consistent and professional look.
+- **Custom Components**: Reusable Sphinx components, such as custom directives
+  and roles, to simplify content creation.
+- **Centralized Configuration**: A global `conf.py` that can be imported into
+  local configurations, reducing boilerplate and ensuring consistency.
+- **Grav Theme Conversion**: Tools to convert Grav themes into Jinja templates
+  compatible with Sphinx.
+- **Extended Ablog Support**: Enhanced Ablog functionality to support different
+  content types, such as events, tasks, and updates.
+- **Streamlined Project Integration**: Provides a structured approach for integrating `publish` into existing and new Sphinx projects, ensuring consistency and efficiency in documentation deployment.
 
 Installation
 ------------
 
-You can install **sphinxilator** using pip:
+You can install **publish** using pip:
 
 .. code-block:: bash
 
-   pip install photon-platform-sphinxilator
+   pip install photon-platform-publish
 
 Usage
 -----
 
-After installation, you can use the ``sphinxilator`` command to manage your documentation projects:
+After installation, you can use the ``publish`` command to manage your documentation projects:
 
 .. code-block:: bash
 
-   sphinxilator new  # create a new documentation project
-   sphinxilator build  # build the documentation for a project
-   sphinxilator deploy  # deploy the documentation to GitHub Pages
-   sphinxilator organize  # organize content, especially for code documentation
+   publish new  # create a new documentation project
+   publish build  # build the documentation for a project
+   publish deploy  # deploy the documentation to GitHub Pages
+   publish organize  # organize content, especially for code documentation
 
 Dependencies
 ------------
 
-**sphinxilator** depends on the following Python packages:
+**publish** depends on the following Python packages:
 
-.. todo:: TODO: read from pyproject.toml 
+- Sphinx
+- sphinx-rtd-theme
+- Ablog
 
 Contributing
 ------------
 
-Contributions are welcome! Please see our [GitHub issues](https://github.com/photon-platform/sphinxilator/issues) for ways to contribute.
+Contributions are welcome! Please see our [GitHub issues](https://github.com/photon-platform/publish/issues) for ways to contribute.
 
 License
 -------
 
-**sphinxilator** is licensed under the MIT License. See the `LICENSE` file for more details.
+**publish** is licensed under the MIT License. See the `LICENSE` file for more details.

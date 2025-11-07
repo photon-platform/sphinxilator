@@ -1,5 +1,5 @@
 {#
-   Sphinxilator Theme layout.html
+   Publish Theme layout.html
    Based on the semantic structure of grav-theme-photon
 #}
 {%- set url_root = pathto('', 1) %}
@@ -12,7 +12,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{{ title|striptags|e }} &mdash; {{ docstitle|e }}</title>
-  <link rel="stylesheet" href="{{ pathto('_static/css/sphinxilator.css', 1) }}" type="text/css" />
+  <link rel="stylesheet" href="{{ pathto('_static/css/publish.css', 1) }}" type="text/css" />
   <link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}" type="text/css" />
   {%- for css_file in css_files %}
     {{ css_tag(css_file) }}

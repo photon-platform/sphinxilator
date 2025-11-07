@@ -1,5 +1,5 @@
-sphinxilator
-============
+publish
+=======
 
 .. include:: intro.rst
 

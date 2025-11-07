@@ -1,7 +1,7 @@
-﻿photon\_platform.sphinxilator.global\_conf
+﻿photon\_platform.publish.global\_conf
 ==========================================
 
-.. automodule:: photon_platform.sphinxilator.global_conf
+.. automodule:: photon_platform.publish.global_conf
 
    
    .. rubric:: Functions

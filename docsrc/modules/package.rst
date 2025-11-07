@@ -1,13 +1,15 @@
-photon_platform.sphinxilator
-============================
+photon_platform.publish
+=======================
 
-.. automodule:: photon_platform.sphinxilator
+.. automodule:: photon_platform.publish
+   :members:
+   :undoc-members:
+   :show-inheritance:
 
-.. rubric:: Modules
+   .. autosummary::
+      :toctree: generated
+      :template: package.rst
 
-.. autosummary::
-   :toctree: generated/
-
-   ~app
-   ~global_conf
-   ~sphinxilator
+      ~publish.app
+      ~publish.global_conf
+      ~publish.publish

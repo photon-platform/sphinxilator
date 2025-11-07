@@ -1,10 +1,10 @@
 # ROADMAP
 
-This document outlines the development plan for `sphinxilator`, a centralized platform for building and managing documentation websites for the PHOTON platform.
+This document outlines the development plan for `publish`, a centralized platform for building and managing documentation websites for the PHOTON platform.
 
 ## Phase 1: Create the Unified Theme
 
--   **[x] Initialize New Theme:** Create a new theme within `sphinxilator` that will serve as the foundation for the unified documentation platform.
+-   **[x] Initialize New Theme:** Create a new theme within `publish` that will serve as the foundation for the unified documentation platform.
 -   **[x] Integrate `sphinx_rtd_theme`:**
     -   **[x] HTML Structure:** Use the HTML structure from `sphinx_rtd_theme` as the base for the new theme's templates (`layout.html`, `footer.html`, etc.).
     -   **[x] Navigation:** Port the navigation logic from `sphinx_rtd_theme` to the new theme, ensuring it is robust and customizable.
@@ -20,7 +20,7 @@ This document outlines the development plan for `sphinxilator`, a centralized pl
 ## Phase 2: Extend Functionality & CLI
 
 -   **[ ] Enhance Ablog:** Integrate the extended Ablog functionality to support different content types (e.g., events, tasks, updates).
--   **[ ] Create a CLI:** Develop a command-line interface for `sphinxilator` to manage documentation projects.
+-   **[ ] Create a CLI:** Develop a command-line interface for `publish` to manage documentation projects.
     -   **[ ] `new`:** Create a new documentation project.
     -   **[ ] `build`:** Build the documentation for a project.
     -   **[ ] `deploy`:** Deploy the documentation to GitHub Pages.
@@ -34,7 +34,7 @@ This document outlines the development plan for `sphinxilator`, a centralized pl
 
 ## Phase 3: Integration and Deployment
 
--   **[ ] Update `progenitor`:** Update the `progenitor` templates to use the latest `sphinxilator` features.
--   **[ ] Update Projects:** Update all PHOTON platform projects to use the new `sphinxilator` platform for their documentation.
--   **[ ] Update Deployment Workflow:** Update the `action-deploy-sphinx-gh-pages` GitHub Action to use the `sphinxilator` CLI.
--   **[ ] Documentation:** Create comprehensive documentation for `sphinxilator`, including tutorials and examples.
+-   **[ ] Update `progenitor`:** Update the `progenitor` templates to use the latest `publish` features.
+-   **[ ] Update Projects:** Update all PHOTON platform projects to use the new `publish` platform for their documentation.
+-   **[ ] Update Deployment Workflow:** Update the `action-deploy-sphinx-gh-pages` GitHub Action to use the `publish` CLI.
+-   **[ ] Documentation:** Create comprehensive documentation for `publish`, including tutorials and examples.

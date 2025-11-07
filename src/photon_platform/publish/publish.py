@@ -1,13 +1,13 @@
 """
-sphinxilator
+publish
 """
 
-class Sphinxilator:
+class Publish:
     """
     A class to streamline and enhance the Sphinx documentation framework.
     """
     def run(self):
         """
-        Run the Sphinxilator.
+        Run the Publish tool.
         """
-        return "Sphinxilator is running."
+        return "Publish is running."

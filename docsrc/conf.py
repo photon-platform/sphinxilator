@@ -2,16 +2,17 @@ import os
 import sys
 from datetime import datetime
 import ablog
-import photon_platform.sphinxilator as sphinxilator
+import photon_platform.publish as publish
 
 # -- Project information -----------------------------------------------------
 
-project = "sphinxilator"
+project = "publish"
 copyright = f"{datetime.now().year}, phi ARCHITECT"
 author = "phi ARCHITECT"
 
-version = sphinxilator.__version__
-release = sphinxilator.__version__
+version = publish.__version__
+# The full version, including alpha/beta/rc tags
+release = publish.__version__
 
 # -- General configuration ---------------------------------------------------
 
@@ -51,14 +52,14 @@ todo_include_todos = True
 
 # -- Options for HTML output -------------------------------------------------
 
-html_theme = "sphinxilator_theme"
-html_theme_path = [sphinxilator.get_path()]
+html_theme = "publish_theme"
+html_theme_path = [publish.get_path()]
 html_static_path = ["_static"]
 
 html_context = {
     "display_github": True,
     "github_user": "photon-platform",
-    "github_repo": "sphinxilator",
+    "github_repo": "publish",
     "github_version": "main",
     "conf_py_path": "/docsrc/",
     "theme_navigation_depth": -1,
@@ -70,13 +71,25 @@ html_context = {
     "theme_sticky_navigation": True,
 }
 
-# -- ABlog Options -----------------------------------------------------------
+ogp_site_url = "https://photon-platform.github.io/publish"
+ogp_image = "https://photon-platform.github.io/publish/_static/logo.png"
+ogp_social_cards = {
+    "enable": True,
+    "image_paths": ["_static/social_previews"],
+}
+ogp_custom_meta_tags = [
+    '<meta property="og:description" content="A tool to streamline and enhance the Sphinx documentation framework." />',
+]
+ogp_github_url = "https://github.com/photon-platform/publish"
+ogp_github_user = "phiarchitect"
+ogp_github_repo = "publish"
 
+
+# -- ABlog settings ----------------------------------------------------------
 blog_path = "log"
-blog_title = "sphinxilator • Blog"
-blog_baseurl = "https://photon-platform.github.io/sphinxilator"
-post_date_format = "%y.%j-%H%M%S"
-post_date_format_short = "%y.%j"
+blog_post_pattern = "log/**/index.rst"
+blog_title = "publish • Blog"
+blog_baseurl = "https://photon-platform.github.io/publish"
 
 # -- Intersphinx -------------------------------------------------------------
 
