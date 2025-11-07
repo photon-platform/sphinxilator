@@ -1,6 +1,14 @@
 changelog
 =========
 
+0.1.1
+-----
+*2025-11-07*
+
+**fixed**
+
++ Resolved build issues with the Sphinx documentation by removing outdated and conflicting files from the `docsrc/modules` directory. This ensures a clean and successful build process.
+
 0.1.0
 -----
 *2025-11-07*
