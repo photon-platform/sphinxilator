@@ -1,6 +1,23 @@
-<article>
-    {% include "_articles/_block/article_nav.html" %}
-    {% include "_articles/_block/article_header.html" %}
-    {% include "_articles/_block/article_main.html" %}
-    {% include "_articles/_block/article_footer.html" %}
-</article>
+    <article>
+      <nav class="context">
+        <div class="prev">
+{%- if prev %}
+           <a href="{{ prev.link|e }}" class="prev" title="{{ prev.title|striptags|e }}" >Prev</a>
+{%- endif %}
+        </div>
+        <div class="next">
+{%- if next %}
+          <a href="{{ next.link|e }}" class="next" title="{{ next.title|striptags|e }}" >Next</a>
+{%- endif %}
+        </div>
+      </nav>
+      <header>
+        <h1>{{ title }}</h1>
+      </header>
+      <div class="content">
+          {{ body }}
+      </div>
+      <footer>
+{#- Placeholder for article footer content -#}
+      </footer>
+    </article>

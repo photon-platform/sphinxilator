@@ -1,17 +1,17 @@
-<header>
+  <header>
     <div class="logo">
-        <a href="{{ pathto(master_doc) }}">
-            {%- if logo_url %}
-                <img src="{{ logo_url }}" class="logo" alt="Logo"/>
-            {%- else %}
-                <h1>{{ project }}</h1>
-            {%- endif %}
-        </a>
+      <a href="{{ pathto(master_doc) }}">
+{%- if logo_url %}
+        <img src="{{ logo_url }}" class="logo" alt="Logo"/>
+{%- else %}
+        <h1>{{ project }}</h1>
+{%- endif %}
+      </a>
     </div>
-    {% with nav_list=header_nav_list, nav_title='Header' %}
-        {% include "_sections/nav.html" %}
-    {% endwith %}
+{%- with nav_list=header_nav_list, nav_title='Header' %}
+{%-    include "_sections/nav.html" %}
+{%- endwith %}
     <div class="motto">
-        {#- Placeholder for motto/tagline -#}
+{#- Placeholder for motto/tagline -#}
     </div>
-</header>
+  </header>

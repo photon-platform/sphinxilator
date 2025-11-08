@@ -1,4 +1,0 @@
-// shorthand function to retreive breakpoint values
-@function bp-get($bp, $val) {
-    @return map-get(map-get($bp-map, $bp), $val);
-}
