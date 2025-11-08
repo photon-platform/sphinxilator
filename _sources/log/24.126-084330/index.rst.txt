@@ -1,7 +1,9 @@
+:type: log
+:date: 24.126-084330
+:tags: publish, app
+:category: publish
+
 test
 ====
 
-.. post::  24.126-084330
-   :tags: 
-   :category: 
 

@@ -1,0 +1,139 @@
+/* templates/_default *****************************/
+
+body {
+  color: var(--color);
+  background: var(--color-key-lighter);
+
+  padding: var(--fitz);
+
+  display: flex;
+  flex-flow: column nowrap;
+
+  > * {
+    background: var(--bg);
+    margin: var(--fitz);
+    padding: var(--fitz);
+
+    > * {
+      background: var(--bg);
+      margin: var(--fitz);
+      padding: var(--fitz);
+    }
+  }
+
+  %body-section-default {
+  }
+
+  @import 'header';
+  @import 'main';
+  @import 'asides';
+  @import 'footer';
+
+  @media (orientation: portrait) {
+    > header {
+      > nav {
+        // order: 0;
+        // flex-basis: auto;
+        > ul {
+          flex-flow: row wrap;
+          justify-content: center;
+          >li + li {
+            margin-top: 0;
+          }
+        }
+      }
+    }
+  }
+
+  @media (orientation: landscape) {
+    display: grid;
+    grid-template-areas:
+        " header main "
+        " asides main "
+        " asides footer ";
+    // grid-template-columns: var(--col)   1fr;
+    grid-template-columns: 16em   1fr;
+    grid-template-rows: auto 1fr auto;
+
+    > header {
+      flex-flow: column nowrap;
+      align-items: stretch;
+
+      > * {
+        // width: 100%;
+      }
+
+      > .logo {
+        a img {
+          height: 8em;
+        }
+      }
+
+      > nav {
+        order: 0;
+        flex-flow: column nowrap;
+        align-items: center;
+      }
+    }
+
+    > .asides {
+      flex-flow: column nowrap;
+      align-items: stretch;
+
+      > * {
+        // width: 100%;
+      }
+    }
+
+    > footer {
+      flex-flow: column nowrap;
+      align-items: stretch;
+
+      > * {
+      }
+    }
+
+    > main {
+    }
+    @media (min-height: 20em) {
+      > .logo {
+        a img {
+          height: 2em;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 48em) {
+    @media (orientation: portrait) {
+      > header {
+        > nav {
+          order: 0;
+          flex-basis: auto;
+          > ul {
+            flex-flow: row wrap;
+            >li {
+              margin-top: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: 72em) {
+    @media (orientation: landscape) {
+      display: grid;
+      grid-template-areas:
+          " header main asides"
+          " footer main asides";
+      grid-template-columns: var(--col)  1fr  var(--col);
+      // grid-template-rows: auto 1fr auto;
+      > header {
+        > nav > label {
+          display: none;
+        }
+      }
+    }
+  }
+}

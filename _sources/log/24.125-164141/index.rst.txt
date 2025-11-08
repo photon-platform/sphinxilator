@@ -1,9 +1,11 @@
+:type: log
+:date: 24.125-164141
+:tags: publish, app
+:category: publish
+
 introducing publish
 ===================
 
-.. post:: 24.125-164141
-   :tags: intro
-   :category: status
 
 As the architect behind `publish`, my primary goal is to create a unified platform that simplifies and enhances the Sphinx documentation process across multiple projects. The genesis of this initiative is rooted in the complexities I encountered managing disparate Sphinx setups, each with its unique configurations and themes.
 

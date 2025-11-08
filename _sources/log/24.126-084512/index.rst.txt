@@ -1,9 +1,10 @@
-add `global_conf.py`
-====================
+:type: log
+:date: 24.126-084512
+:tags: publish, app
+:category: publish
 
-.. post::  24.126-084512
-   :tags: 
-   :category: 
+add global_conf.py
+==================
 
 common settings for photon conf files
 
