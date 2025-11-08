@@ -1,0 +1,30 @@
+// Headings. OpenType ligatures, discretionary ligatures and lining figures enabled if available.
+
+
+%heading-default {
+  font-family: var(--font-display);
+  // font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+  font-weight: 700;
+  font-size: 1.2em;
+  line-height: 1.5;
+
+  display: block;
+}
+
+h1 {
+  @extend %heading-default;
+  // font-size: 1.5em;
+}
+
+h2 {
+  @extend %heading-default;
+  // font-size: 1.3em;
+}
+
+h3 {
+  @extend %heading-default;
+}
+
+h4 {
+  @extend %heading-default;
+}

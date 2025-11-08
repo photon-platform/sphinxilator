@@ -1,0 +1,6 @@
+
+  > .asides {
+    @extend %body-section-default;
+    display: flex;
+    flex-flow: column nowrap;
+  }

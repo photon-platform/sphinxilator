@@ -20,6 +20,7 @@ dependencies = [
     "sphinxcontrib-jquery",
     "libsass",
     "click",
+    "sphinxcontrib-sass",
 ]
 
 [project.scripts]

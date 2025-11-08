@@ -25,10 +25,10 @@ in general this should just leave the peronalized elements
 """
 import ablog
 import os
-
-#  import photonsphinx
-#  import sphinx_rtd_theme
+import sys
 from datetime import datetime
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), 'directives')))
 
 
 def setup_globals(org, org_name, repo, repo_name):
@@ -182,7 +182,6 @@ extensions = [
     "sphinx.ext.viewcode",
     "sphinxcontrib.youtube",
     #  "sphinxcontrib.bibtex",
-    "ablog",
     "myst_parser",
     "sphinx_revealjs",
     "sphinx_revealjs.ext.footnotes",
@@ -190,16 +189,17 @@ extensions = [
     #  "sphinxcontrib.budoux",
     #  "sphinxcontrib.gtagjs",
     #  "sphinxcontrib.oembed",
-    #  "sphinxcontrib.sass",
+    "sphinxcontrib.sass",
     "sphinxext.opengraph",
     "sphinx_carousel.carousel",
     "sphinxcontrib.jquery",
+    "photon_platform.publish.directives.collection",
 ]
 
 autosummary_generate = True
 
 # Add any paths that contain templates here, relative to this directory.
-templates_path = ["_templates", ablog.get_html_templates_path()]
+templates_path = ["_templates"]
 
 # The suffix(es) of source filenames.
 source_suffix = {
@@ -348,7 +348,7 @@ html_static_path = ["_static"]
 # This is the file name suffix for HTML files (e.g. ".xhtml").
 # html_file_suffix = None
 
-# Language to be used for generating the HTML full-text search index.
+# Language to be be used for generating the HTML full-text search index.
 # Sphinx supports the following languages:
 #   'da', 'de', 'en', 'es', 'fi', 'fr', 'hu', 'it', 'ja'
 #   'nl', 'no', 'pt', 'ro', 'ru', 'sv', 'tr'
@@ -407,3 +407,9 @@ autodoc_default_options = {
 html_permalinks = True
 
 #  bibtex_bibfiles = ['refs.bib']
+
+# SASS options
+sass_src_dir = 'themes/photon/static/scss'
+sass_out_dir = 'themes/photon/static/css'
+sass_filename = 'photon.scss'
+sass_args = ['--style', 'compressed']

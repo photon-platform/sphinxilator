@@ -1,0 +1,12 @@
+
+  > footer {
+    @extend %body-section-default;
+    display: flex;
+    flex-flow: row wrap;
+    aside {
+      display: flex;
+      flex-flow: column nowrap;
+
+      align-items: center;
+    }
+  }

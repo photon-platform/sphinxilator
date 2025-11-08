@@ -1,6 +1,18 @@
 changelog
 =========
 
+0.2.0
+-----
+*2025-11-08*
+
+**changed**
+
++ Refactored the Sphinx theme to align with the design and functionality of the original Grav theme.
++ Replaced the `ablog` extension with a custom `collection` directive to provide more flexible, time-based content listings for any page type.
++ Introduced a hierarchical content model, allowing pages to manage and display subordinate items.
++ Updated the theme templates to use a more semantic and modular HTML structure.
++ Integrated SASS for more maintainable and flexible styling.
+
 0.1.2
 -----
 *2025-11-07*
