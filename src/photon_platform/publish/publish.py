@@ -40,7 +40,7 @@ def build_sass():
             return
 
         with open(css_file, 'w') as f:
-            f.write(sass.compile(filename=scss_file, output_style='compressed'))
+            f.write(sass.compile(filename=scss_file, output_style='expanded'))
         click.echo("SASS compilation successful.")
     except Exception as e:
         click.echo(f"Error compiling SASS: {e}", err=True)

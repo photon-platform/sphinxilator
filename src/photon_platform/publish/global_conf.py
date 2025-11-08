@@ -412,4 +412,4 @@ html_permalinks = True
 sass_src_dir = 'themes/photon/static/scss'
 sass_out_dir = 'themes/photon/static/css'
 sass_filename = 'photon.scss'
-sass_args = ['--style', 'compressed']
+sass_args = ['--style', 'expanded']

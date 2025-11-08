@@ -1,6 +1,14 @@
 changelog
 =========
 
+0.2.1
+-----
+*2025-11-08*
+
+**changed**
+
++ The SCSS compilation now generates expanded, readable CSS instead of compressed CSS. This improves debuggability of the styles.
+
 0.2.0
 -----
 *2025-11-08*
