@@ -1,4 +1,9 @@
-glossary
+:navigation: footer
+:order: 4
+
+.. _glossary:
+
+Glossary
 ========
 
 .. todo:: establish glossary entries
