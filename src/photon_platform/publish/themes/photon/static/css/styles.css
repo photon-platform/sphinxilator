@@ -10,20 +10,6 @@
 
 @font-face {
   font-family: 'Fira Sans';
-  src: local("Fira Sans Light"), url("../fonts/Fira_Sans/FiraSans-Light.ttf") format("truetype");
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Fira Sans';
-  src: local("Fira Sans Light Italic"), url("../fonts/Fira_Sans/FiraSans-LightItalic.ttf") format("truetype");
-  font-weight: 300;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Fira Sans';
   src: local("Fira Sans Regular"), url("../fonts/Fira_Sans/FiraSans-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
@@ -33,20 +19,6 @@
   font-family: 'Fira Sans';
   src: local("Fira Sans Regular Italic"), url("../fonts/Fira_Sans/FiraSans-RegularItalic.ttf") format("truetype");
   font-weight: 400;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Fira Sans';
-  src: local("Fira Sans Medium"), url("../fonts/Fira_Sans/FiraSans-Medium.ttf") format("truetype");
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Fira Sans';
-  src: local("Fira Sans Medium Italic"), url("../fonts/Fira_Sans/FiraSans-MediumItalic.ttf") format("truetype");
-  font-weight: 500;
   font-style: italic;
 }
 
@@ -66,22 +38,6 @@
 
 @font-face {
   font-family: 'Fira Sans Condensed';
-  src: local("Fira Sans Condensed Light"), url("../fonts/Fira_Sans_Condensed/FiraSansCondensed-Light.ttf") format("truetype");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Fira Sans Condensed';
-  src: local("Fira Sans Condensed Light Italic"), url("../fonts/Fira_Sans_Condensed/FiraSansCondensed-LightItalic.ttf") format("truetype");
-  font-weight: 300;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Fira Sans Condensed';
   src: local("Fira Sans Condensed Regular"), url("../fonts/Fira_Sans_Condensed/FiraSansCondensed-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
@@ -92,22 +48,6 @@
   font-family: 'Fira Sans Condensed';
   src: local("Fira Sans Condensed Regular Italic"), url("../fonts/Fira_Sans_Condensed/FiraSansCondensed-Italic.ttf") format("truetype");
   font-weight: 400;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Fira Sans Condensed';
-  src: local("Fira Sans Condensed Medium"), url("../fonts/Fira_Sans_Condensed/FiraSansCondensed-Medium.ttf") format("truetype");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Fira Sans Condensed';
-  src: local("Fira Sans Condensed Medium Italic"), url("../fonts/Fira_Sans_Condensed/FiraSansCondensed-MediumItalic.ttf") format("truetype");
-  font-weight: 500;
   font-style: italic;
   font-display: swap;
 }
@@ -130,22 +70,8 @@
 
 @font-face {
   font-family: 'Fira Code';
-  src: local("Fira Code Light"), url("../fonts/Fira_Code/static/FiraCode-Light.ttf") format("truetype");
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Fira Code';
   src: local("Fira Code Regular"), url("../fonts/Fira_Code/static/FiraCode-Regular.ttf") format("truetype");
   font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Fira Code';
-  src: local("Fira Code Medium"), url("../fonts/Fira_Code/static/FiraCode-Medium.ttf") format("truetype");
-  font-weight: 500;
   font-style: normal;
 }
 
@@ -187,12 +113,50 @@
 
 /* base elements *****************************/
 /* elements/reset *****************************/
-* {
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+div,
+header,
+nav,
+main,
+aside,
+footer,
+article,
+section,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+blockquote,
+figure,
+figcaption,
+pre,
+table,
+th,
+td,
+form,
+fieldset,
+legend,
+input,
+textarea,
+button {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  border: 0;
-  border-radius: 0;
 }
 
 /* elements/html *****************************/
@@ -1342,84 +1306,27 @@ body > main {
   flex-flow: column nowrap;
 }
 
-body > main div[role="navigation"][aria-label="Page navigation"] {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding-bottom: 1em;
-  border-bottom: 1px solid var(--border-color);
+body > main nav.breadcrumbs {
+  padding: 0.5em 0;
   margin-bottom: 1em;
+  border-bottom: 1px solid var(--border-color);
+  display: block;
 }
 
-body > main div[role="navigation"][aria-label="Page navigation"] hr {
-  display: none;
-}
-
-body > main div[role="navigation"][aria-label="Page navigation"] .wy-breadcrumbs {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-flow: row wrap;
-  align-items: center;
-}
-
-body > main div[role="navigation"][aria-label="Page navigation"] .wy-breadcrumbs li {
-  margin: 0;
-  padding: 0 0.5em;
-  display: inline-block;
-}
-
-body > main div[role="navigation"][aria-label="Page navigation"] .wy-breadcrumbs li::after {
-  content: '/';
-  margin-left: 0.5em;
-  color: var(--text-color);
-}
-
-body > main div[role="navigation"][aria-label="Page navigation"] .wy-breadcrumbs li:last-child::after {
-  content: '';
-}
-
-body > main div[role="navigation"][aria-label="Page navigation"] .wy-breadcrumbs li.wy-breadcrumbs-aside {
-  margin-left: auto;
-  padding-right: 0;
-}
-
-body > main div[role="navigation"][aria-label="Page navigation"] .wy-breadcrumbs li.wy-breadcrumbs-aside::after {
-  content: '';
-}
-
-body > main div[role="navigation"][aria-label="Page navigation"] .wy-breadcrumbs a.icon-home::before {
-  font-family: var(--font-icon);
-  content: 'H';
-  font-size: 1.2em;
-  padding-right: 0.5em;
-}
-
-body > main div[role="navigation"][aria-label="Page navigation"] .rst-breadcrumbs-buttons {
-  display: flex;
-  gap: 1em;
-}
-
-body > main div[role="navigation"][aria-label="Page navigation"] .rst-breadcrumbs-buttons .btn {
-  color: var(--link-color);
-  border: 1px solid var(--border-color);
-  padding: 0.5em 1em;
-  border-radius: 0.25em;
+body > main nav.breadcrumbs a {
   text-decoration: none;
-  white-space: nowrap;
+  color: var(--link-color);
+  display: inline;
+  --offset: 0;
 }
 
-body > main div[role="navigation"][aria-label="Page navigation"] .rst-breadcrumbs-buttons .btn:hover {
-  color: var(--link-hover-color);
-  background: var(--bg-alt-color);
-  border-color: var(--link-hover-color);
+body > main nav.breadcrumbs a:hover {
+  text-decoration: underline;
 }
 
-body > main div[role="navigation"][aria-label="Page navigation"] .rst-breadcrumbs-buttons .btn .fa {
-  display: none;
+body > main nav.breadcrumbs span {
+  margin: 0 0.5em;
+  color: var(--text-color);
 }
 
 body > main > article {

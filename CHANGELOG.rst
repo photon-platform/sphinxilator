@@ -1,6 +1,17 @@
 changelog
 =========
 
+0.2.2
+-----
+*2025-11-08*
+
+**changed**
+
++ Refined theme styles and templates, removing unused files and streamlining the overall structure.
++ Implemented new breadcrumbs in article headers for improved navigation.
++ Pared down font weights to reduce load times and improve performance.
++ Replaced the aggressive CSS reset with a more modern, targeted approach.
+
 0.2.1
 -----
 *2025-11-08*
