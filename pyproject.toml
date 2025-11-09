@@ -13,18 +13,17 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 dependencies = [
-    "textual",
-    "rich",
+    "sphinx",
     "jinja2",
+    "myst_parser",
     "sphinx-carousel",
     "sphinxcontrib-jquery",
-    "libsass",
-    "click",
     "sphinxcontrib-sass",
     "sphinxcontrib-youtube",
-    "myst_parser",
     "sphinx_revealjs",
     "sphinxext-opengraph",
+    "libsass",
+    "click",
 ]
 
 [project.scripts]
