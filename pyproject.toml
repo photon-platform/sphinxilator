@@ -21,6 +21,7 @@ dependencies = [
     "libsass",
     "click",
     "sphinxcontrib-sass",
+    "sphinxcontrib-youtube",
 ]
 
 [project.scripts]
