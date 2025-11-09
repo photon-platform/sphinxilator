@@ -1,6 +1,14 @@
 changelog
 =========
 
+0.2.3
+-----
+*2025-11-09*
+
+**added**
+
++ Added a footer navigation section, configurable via page metadata.
+
 0.2.2
 -----
 *2025-11-08*

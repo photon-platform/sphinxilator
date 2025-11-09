@@ -87,6 +87,7 @@ class CollectionDirective(SphinxDirective):
 def build_nav_links(app, pagename, templatename, context, doctree):
     """Build a list of navigation links from document metadata."""
     header_nav_list = []
+    footer_nav_list = []
     recent_logs = []
     for docname in app.env.found_docs:
         meta = app.env.metadata.get(docname, {})
@@ -94,6 +95,14 @@ def build_nav_links(app, pagename, templatename, context, doctree):
             title = app.env.titles.get(docname)
             if title:
                 header_nav_list.append({
+                    'docname': docname,
+                    'title': title.astext(),
+                    'order': meta.get('order', 0),
+                })
+        if meta.get('navigation') == 'footer':
+            title = app.env.titles.get(docname)
+            if title:
+                footer_nav_list.append({
                     'docname': docname,
                     'title': title.astext(),
                     'order': meta.get('order', 0),
@@ -110,6 +119,10 @@ def build_nav_links(app, pagename, templatename, context, doctree):
     # Sort the navigation list by the 'order' metadata field
     header_nav_list.sort(key=lambda x: x['order'])
     context['header_nav_list'] = header_nav_list
+
+    # Sort the footer navigation list by the 'order' metadata field
+    footer_nav_list.sort(key=lambda x: x['order'])
+    context['footer_nav_list'] = footer_nav_list
 
     # Sort the recent logs list by date
     recent_logs.sort(key=lambda x: x['date'], reverse=True)

@@ -1,4 +1,19 @@
 footer {
   @extend %section-default;
   grid-area: footer;
+
+  .footer-nav {
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        margin: 0 1em;
+      }
+    }
+  }
 }
