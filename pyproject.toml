@@ -22,6 +22,9 @@ dependencies = [
     "click",
     "sphinxcontrib-sass",
     "sphinxcontrib-youtube",
+    "myst_parser",
+    "sphinx_revealjs",
+    "sphinxext-opengraph",
 ]
 
 [project.scripts]
