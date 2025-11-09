@@ -1,29 +1,5 @@
 """
-Sass is not building correctly:
-
-Sass is not building correctly:
-
-Sass is not building correctly:
-
-Sass is not building correctly:
-
-Sass is not building correctly:
-
-Sass is not building correctly:
-
-Sass is not building correctly:
-
-Sass is not building correctly:
-
-default config setting for ablog
-
-``from ablog.conf import *``
-
-override any values in the project's ``conf.py``
-
-in general this should just leave the peronalized elements
 """
-import ablog
 import os
 import sys
 from datetime import datetime

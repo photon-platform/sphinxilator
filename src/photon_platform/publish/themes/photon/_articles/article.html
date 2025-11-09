@@ -1,5 +1,4 @@
     <article>
-      {% include "_sections/_breadcrumbs.html" %}
       <nav class="context">
         <div class="prev">
 {%- if prev %}
@@ -12,9 +11,10 @@
 {%- endif %}
         </div>
       </nav>
-      <header>
-        <h1>{{ title }}</h1>
-      </header>
+{% include "_sections/_breadcrumbs.html" %}
+      {#- <header> #}
+        {#- <h1>{{ title }}</h1> #}
+      {#- </header> #}
       <div class="content">
           {{ body }}
       </div>

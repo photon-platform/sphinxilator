@@ -1,4 +1,3 @@
-from ablog.conf import *
 from photon_platform.publish.global_conf import *
 import photon_platform.publish as module
 
