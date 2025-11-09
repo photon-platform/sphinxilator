@@ -6,6 +6,8 @@ from datetime import datetime
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), 'directives')))
 
+html_context = {}
+
 
 def setup_globals(org, org_name, repo, repo_name):
     globals().update(
@@ -25,14 +27,17 @@ def setup_globals(org, org_name, repo, repo_name):
             "html_base_url": f"https://{org}.github.io/{repo}",
             "html_baseurl": f"https://{org}.github.io/{repo}",
             "blog_authors": {"phi": ("phi ARCHITECT", None)},
-            "html_context": {
-                "display_github": True,
-                "github_user": org,
-                "github_repo": repo,
-                "github_version": "main",
-                "conf_py_path": "/docsrc/",
-            },
-            # Add other global settings that should be the same across all projects here.
+        }
+    )
+    html_context.update(
+        {
+            "display_github": True,
+            "github_user": org,
+            "github_repo": repo,
+            "github_version": "main",
+            "conf_py_path": "/docsrc/",
+            "org_name": org_name,
+            "repo_name": repo_name,
         }
     )
 

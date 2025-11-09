@@ -7,6 +7,11 @@
         <h1>{{ project }}</h1>
 {%- endif %}
       </a>
+      <div class="org-repo">
+        <span class="org">{{ org_name }}</span>
+        •
+        <span class="repo">{{ repo_name }}</span>
+      </div>
     </div>
 {%- with nav_list=header_nav_list, nav_title='Header' %}
 {%-    include "_sections/nav.html" %}
