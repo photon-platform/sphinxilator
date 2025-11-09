@@ -1,22 +1,28 @@
-import sass
-import os
-
+"""
 Compiles the SASS files for the publish theme.
 """
 import os
 import sass
 
-scss_dir = os.path.join(os.path.dirname(__file__), '..', 'themes', 'publish_theme', 'static', 'scss')
-css_dir = os.path.join(os.path.dirname(__file__), '..', 'themes', 'publish_theme', 'static', 'css')
 
-if not os.path.exists(css_dir):
-    os.makedirs(css_dir)
+def build_sass() -> None:
+    """Compiles the SASS files for the publish theme."""
+    scss_dir = os.path.join(
+        os.path.dirname(__file__), "..", "themes", "publish_theme", "static", "scss"
+    )
+    css_dir = os.path.join(
+        os.path.dirname(__file__), "..", "themes", "publish_theme", "static", "css"
+    )
 
-scss_file = os.path.join(scss_dir, 'photon.scss')
-css_file = os.path.join(css_dir, 'publish.css')
+    if not os.path.exists(css_dir):
+        os.makedirs(css_dir)
 
-with open(css_file, 'w') as f:
-    f.write(sass.compile(filename=scss_file))
+    scss_file = os.path.join(scss_dir, "photon.scss")
+    css_file = os.path.join(css_dir, "publish.css")
 
-if __name__ == '__main__':
+    with open(css_file, "w") as f:
+        f.write(sass.compile(filename=scss_file))
+
+
+if __name__ == "__main__":
     build_sass()

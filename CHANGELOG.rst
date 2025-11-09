@@ -1,6 +1,20 @@
 changelog
 =========
 
+0.2.6
+-----
+*2025-11-09*
+
+**added**
+
++ Integrated Sphinx AutoAPI for automated API documentation generation.
++ Added comprehensive docstrings and type hints to all modules for improved code clarity and maintainability.
+
+**changed**
+
++ Refactored the documentation structure to place the API reference under the "Modules" section.
++ Cleaned up `global_conf.py` by removing unused configuration variables and adding a module docstring.
+
 0.2.5
 -----
 *2025-11-09*

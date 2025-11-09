@@ -18,7 +18,11 @@ class CollectionDirective(SphinxDirective):
         'title': directives.unchanged,
     }
 
-    def run(self):
+    def run(self) -> list:
+        """
+        Process the collection directive, discover and sort documents,
+        and render them using a Jinja2 template.
+        """
         env = self.env
         
         collection_type = self.options.get('type')
@@ -84,8 +88,8 @@ class CollectionDirective(SphinxDirective):
         
         return [nodes.raw('', html, format='html'), toc]
 
-def build_nav_links(app, pagename, templatename, context, doctree):
-    """Build a list of navigation links from document metadata."""
+def build_nav_links(app, pagename: str, templatename: str, context: dict, doctree) -> None:
+    """Build navigation links from document metadata and add them to the context."""
     header_nav_list = []
     footer_nav_list = []
     recent_logs = []
@@ -128,7 +132,8 @@ def build_nav_links(app, pagename, templatename, context, doctree):
     recent_logs.sort(key=lambda x: x['date'], reverse=True)
     context['recent_logs'] = recent_logs[:5]
 
-def setup(app):
+def setup(app) -> dict:
+    """Register the collection directive and connect the build_nav_links function."""
     app.add_directive("collection", CollectionDirective)
     app.connect('html-page-context', build_nav_links)
     return {

@@ -1,5 +1,7 @@
-Code
-====
+:navigation: header
+:order: 2
 
-.. toctree::
-   :maxdepth: 2
+modules
+=======
+
+.. include:: api/index.rst

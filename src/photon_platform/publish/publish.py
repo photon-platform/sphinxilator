@@ -10,7 +10,7 @@ import sass
 import subprocess
 from sphinx.application import Sphinx
 
-def find_git_root():
+def find_git_root() -> str | None:
     """Find the git repository root."""
     try:
         result = subprocess.run(
@@ -21,7 +21,7 @@ def find_git_root():
     except (subprocess.CalledProcessError, FileNotFoundError):
         return None
 
-def build_sass():
+def build_sass() -> None:
     """Compile SASS files for the theme."""
     click.echo("Compiling SASS...")
     try:
@@ -46,7 +46,7 @@ def build_sass():
         click.echo(f"Error compiling SASS: {e}", err=True)
         raise
 
-def build():
+def build() -> None:
     """Build the Sphinx documentation."""
     project_root = find_git_root()
     if not project_root:
@@ -84,7 +84,7 @@ def build():
     app.build()
     click.echo("Sphinx build completed successfully.")
 
-def clean():
+def clean() -> None:
     """Remove the build directory."""
     project_root = find_git_root()
     if not project_root:
@@ -98,7 +98,7 @@ def clean():
     else:
         click.echo("Build directory not found.")
 
-def test():
+def test() -> None:
     """Build and serve the documentation locally."""
     project_root = find_git_root()
     if not project_root:
