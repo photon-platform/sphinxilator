@@ -9,7 +9,6 @@ publish
 
    mission/index.rst
    usage/index.rst
-   demos/index.rst
    modules/index.rst
    log/index.rst
    refs/index.rst
