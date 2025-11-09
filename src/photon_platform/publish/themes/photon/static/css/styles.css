@@ -518,6 +518,184 @@ button:hover {
   text-decoration: none;
 }
 
+/* elements/admonitions *****************************/
+/* admonitions */
+.admonition {
+  border-left: 5px solid var(--text-color);
+  background-color: var(--bg-alt-color);
+  padding: var(--fitz);
+  margin: var(--fitz-2) 0;
+}
+
+.admonition .admonition-title {
+  color: var(--text-color);
+  font-weight: bold;
+}
+
+.admonition p {
+  margin: 0;
+}
+
+.admonition-todo {
+  border-left: 5px solid #ff8888;
+  background-color: var(--bg-alt-color);
+  padding: var(--fitz);
+  margin: var(--fitz-2) 0;
+}
+
+.admonition-todo .admonition-title {
+  color: #ff8888;
+  font-weight: bold;
+}
+
+.admonition-todo p {
+  margin: 0;
+}
+
+.admonition-note {
+  border-left: 5px solid #88aaff;
+  background-color: var(--bg-alt-color);
+  padding: var(--fitz);
+  margin: var(--fitz-2) 0;
+}
+
+.admonition-note .admonition-title {
+  color: #88aaff;
+  font-weight: bold;
+}
+
+.admonition-note p {
+  margin: 0;
+}
+
+.admonition-warning {
+  border-left: 5px solid #ffcc88;
+  background-color: var(--bg-alt-color);
+  padding: var(--fitz);
+  margin: var(--fitz-2) 0;
+}
+
+.admonition-warning .admonition-title {
+  color: #ffcc88;
+  font-weight: bold;
+}
+
+.admonition-warning p {
+  margin: 0;
+}
+
+.admonition-danger {
+  border-left: 5px solid #ff8888;
+  background-color: var(--bg-alt-color);
+  padding: var(--fitz);
+  margin: var(--fitz-2) 0;
+}
+
+.admonition-danger .admonition-title {
+  color: #ff8888;
+  font-weight: bold;
+}
+
+.admonition-danger p {
+  margin: 0;
+}
+
+.admonition-attention {
+  border-left: 5px solid #ffcc88;
+  background-color: var(--bg-alt-color);
+  padding: var(--fitz);
+  margin: var(--fitz-2) 0;
+}
+
+.admonition-attention .admonition-title {
+  color: #ffcc88;
+  font-weight: bold;
+}
+
+.admonition-attention p {
+  margin: 0;
+}
+
+.admonition-caution {
+  border-left: 5px solid #ffcc88;
+  background-color: var(--bg-alt-color);
+  padding: var(--fitz);
+  margin: var(--fitz-2) 0;
+}
+
+.admonition-caution .admonition-title {
+  color: #ffcc88;
+  font-weight: bold;
+}
+
+.admonition-caution p {
+  margin: 0;
+}
+
+.admonition-error {
+  border-left: 5px solid #ff8888;
+  background-color: var(--bg-alt-color);
+  padding: var(--fitz);
+  margin: var(--fitz-2) 0;
+}
+
+.admonition-error .admonition-title {
+  color: #ff8888;
+  font-weight: bold;
+}
+
+.admonition-error p {
+  margin: 0;
+}
+
+.admonition-hint {
+  border-left: 5px solid #88ff88;
+  background-color: var(--bg-alt-color);
+  padding: var(--fitz);
+  margin: var(--fitz-2) 0;
+}
+
+.admonition-hint .admonition-title {
+  color: #88ff88;
+  font-weight: bold;
+}
+
+.admonition-hint p {
+  margin: 0;
+}
+
+.admonition-important {
+  border-left: 5px solid #ffcc88;
+  background-color: var(--bg-alt-color);
+  padding: var(--fitz);
+  margin: var(--fitz-2) 0;
+}
+
+.admonition-important .admonition-title {
+  color: #ffcc88;
+  font-weight: bold;
+}
+
+.admonition-important p {
+  margin: 0;
+}
+
+.admonition-tip {
+  border-left: 5px solid #88ff88;
+  background-color: var(--bg-alt-color);
+  padding: var(--fitz);
+  margin: var(--fitz-2) 0;
+}
+
+.admonition-tip .admonition-title {
+  color: #88ff88;
+  font-weight: bold;
+}
+
+.admonition-tip p {
+  margin: 0;
+}
+
 /* articles/article *****************************/
 article {
   padding: var(--fitz-2);

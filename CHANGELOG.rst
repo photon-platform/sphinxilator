@@ -1,6 +1,14 @@
 changelog
 =========
 
+0.2.5
+-----
+*2025-11-09*
+
+**added**
+
++ Admonition styling for todo, note, warning, danger, attention, caution, error, hint, important, and tip.
+
 0.2.4
 -----
 *2025-11-09*
