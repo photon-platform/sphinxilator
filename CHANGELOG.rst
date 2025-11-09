@@ -1,6 +1,14 @@
 changelog
 =========
 
+0.2.7
+-----
+*2025-11-09*
+
+**changed**
+
++ The style of the headerlink has been changed to match the size of the heading it's in. It is now faded until hovered over, at which point it shows the link color. It also has a little left padding to separate it from the heading.
+
 0.2.6
 -----
 *2025-11-09*

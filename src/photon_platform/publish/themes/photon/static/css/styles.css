@@ -185,6 +185,17 @@ h4, h3, h2, h1 {
   display: block;
 }
 
+h1 a.headerlink, h2 a.headerlink, h3 a.headerlink, h4 a.headerlink, h5 a.headerlink, h6 a.headerlink {
+  font-size: 0.8em;
+  opacity: 0.3;
+  padding-left: 0.5em;
+  transition: opacity 0.2s ease-in-out;
+}
+
+h1 a.headerlink:hover, h2 a.headerlink:hover, h3 a.headerlink:hover, h4 a.headerlink:hover, h5 a.headerlink:hover, h6 a.headerlink:hover {
+  opacity: 1;
+}
+
 /* elements/blocks *****************************/
 p, div,
 dl, dd, dt,
