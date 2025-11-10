@@ -1,6 +1,15 @@
 changelog
 =========
 
+0.2.8
+-----
+*2025-11-10*
+
+**fixed**
+
++ Images within the content area are now responsive and will not exceed the width of their container.
++ Added a bottom margin to paragraphs and a top margin to headings to improve readability and spacing.
+
 0.2.7
 -----
 *2025-11-09*
