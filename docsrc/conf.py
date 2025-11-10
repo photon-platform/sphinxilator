@@ -4,7 +4,7 @@ import photon_platform.publish as module
 version = module.__version__
 
 org = "photon-platform"
-org_name = "photon-platform"
+org_name = "PHOTON"
 
 repo = "publish"
 repo_name = "publish"
