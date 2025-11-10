@@ -1,5 +1,5 @@
-publish
-=======
+PHOTON • publish
+================
 
 .. image:: _static/logo.png
 
