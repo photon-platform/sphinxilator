@@ -1,6 +1,8 @@
 publish
 =======
 
+.. image:: _static/logo.png
+
 .. include:: intro.rst
 
 .. toctree::
