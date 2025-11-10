@@ -185,6 +185,17 @@ h4, h3, h2, h1 {
   display: block;
 }
 
+h1 a.headerlink, h2 a.headerlink, h3 a.headerlink, h4 a.headerlink, h5 a.headerlink, h6 a.headerlink {
+  font-size: 0.8em;
+  opacity: 0.3;
+  padding-left: 0.5em;
+  transition: opacity 0.2s ease-in-out;
+}
+
+h1 a.headerlink:hover, h2 a.headerlink:hover, h3 a.headerlink:hover, h4 a.headerlink:hover, h5 a.headerlink:hover, h6 a.headerlink:hover {
+  opacity: 1;
+}
+
 /* elements/blocks *****************************/
 p, div,
 dl, dd, dt,
@@ -196,7 +207,6 @@ details, summary {
 dl {
   padding: var(--fitz-half);
   margin: var(--fitz-half);
-  display: grid;
   grid-gap: var(--fitz-half);
   grid-template-columns: auto 1fr;
 }
@@ -204,7 +214,6 @@ dl {
 dl dt {
   font-weight: 700;
   grid-column: 1 / 2;
-  text-align: right;
   padding-right: var(--fitz-half);
 }
 
@@ -516,6 +525,184 @@ button {
 button:hover {
   background: var(--color-key-light);
   text-decoration: none;
+}
+
+/* elements/admonitions *****************************/
+/* admonitions */
+.admonition {
+  border-left: 5px solid var(--text-color);
+  background-color: var(--bg-alt-color);
+  padding: var(--fitz);
+  margin: var(--fitz-2) 0;
+}
+
+.admonition .admonition-title {
+  color: var(--text-color);
+  font-weight: bold;
+}
+
+.admonition p {
+  margin: 0;
+}
+
+.admonition-todo {
+  border-left: 5px solid #ff8888;
+  background-color: var(--bg-alt-color);
+  padding: var(--fitz);
+  margin: var(--fitz-2) 0;
+}
+
+.admonition-todo .admonition-title {
+  color: #ff8888;
+  font-weight: bold;
+}
+
+.admonition-todo p {
+  margin: 0;
+}
+
+.admonition-note {
+  border-left: 5px solid #88aaff;
+  background-color: var(--bg-alt-color);
+  padding: var(--fitz);
+  margin: var(--fitz-2) 0;
+}
+
+.admonition-note .admonition-title {
+  color: #88aaff;
+  font-weight: bold;
+}
+
+.admonition-note p {
+  margin: 0;
+}
+
+.admonition-warning {
+  border-left: 5px solid #ffcc88;
+  background-color: var(--bg-alt-color);
+  padding: var(--fitz);
+  margin: var(--fitz-2) 0;
+}
+
+.admonition-warning .admonition-title {
+  color: #ffcc88;
+  font-weight: bold;
+}
+
+.admonition-warning p {
+  margin: 0;
+}
+
+.admonition-danger {
+  border-left: 5px solid #ff8888;
+  background-color: var(--bg-alt-color);
+  padding: var(--fitz);
+  margin: var(--fitz-2) 0;
+}
+
+.admonition-danger .admonition-title {
+  color: #ff8888;
+  font-weight: bold;
+}
+
+.admonition-danger p {
+  margin: 0;
+}
+
+.admonition-attention {
+  border-left: 5px solid #ffcc88;
+  background-color: var(--bg-alt-color);
+  padding: var(--fitz);
+  margin: var(--fitz-2) 0;
+}
+
+.admonition-attention .admonition-title {
+  color: #ffcc88;
+  font-weight: bold;
+}
+
+.admonition-attention p {
+  margin: 0;
+}
+
+.admonition-caution {
+  border-left: 5px solid #ffcc88;
+  background-color: var(--bg-alt-color);
+  padding: var(--fitz);
+  margin: var(--fitz-2) 0;
+}
+
+.admonition-caution .admonition-title {
+  color: #ffcc88;
+  font-weight: bold;
+}
+
+.admonition-caution p {
+  margin: 0;
+}
+
+.admonition-error {
+  border-left: 5px solid #ff8888;
+  background-color: var(--bg-alt-color);
+  padding: var(--fitz);
+  margin: var(--fitz-2) 0;
+}
+
+.admonition-error .admonition-title {
+  color: #ff8888;
+  font-weight: bold;
+}
+
+.admonition-error p {
+  margin: 0;
+}
+
+.admonition-hint {
+  border-left: 5px solid #88ff88;
+  background-color: var(--bg-alt-color);
+  padding: var(--fitz);
+  margin: var(--fitz-2) 0;
+}
+
+.admonition-hint .admonition-title {
+  color: #88ff88;
+  font-weight: bold;
+}
+
+.admonition-hint p {
+  margin: 0;
+}
+
+.admonition-important {
+  border-left: 5px solid #ffcc88;
+  background-color: var(--bg-alt-color);
+  padding: var(--fitz);
+  margin: var(--fitz-2) 0;
+}
+
+.admonition-important .admonition-title {
+  color: #ffcc88;
+  font-weight: bold;
+}
+
+.admonition-important p {
+  margin: 0;
+}
+
+.admonition-tip {
+  border-left: 5px solid #88ff88;
+  background-color: var(--bg-alt-color);
+  padding: var(--fitz);
+  margin: var(--fitz-2) 0;
+}
+
+.admonition-tip .admonition-title {
+  color: #88ff88;
+  font-weight: bold;
+}
+
+.admonition-tip p {
+  margin: 0;
 }
 
 /* articles/article *****************************/
