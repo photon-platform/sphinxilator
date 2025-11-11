@@ -719,44 +719,45 @@ article > * {
   margin: 0;
 }
 
-article > nav.context {
+article nav.context {
   grid-area: context;
+  width: 100%;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: flex-start;
 }
 
-article > nav.context div {
+article nav.context div {
   min-width: 4em;
 }
 
-article > nav.context a {
+article nav.context a {
   --offset: 1.2em;
 }
 
-article > nav.context a.prev {
+article nav.context a.prev {
   justify-content: flex-start;
 }
 
-article > nav.context a.prev::before {
+article nav.context a.prev::before {
   padding-top: .1em;
   font-family: var(--font-icon);
   content: "<";
   text-align: left;
 }
 
-article > nav.context a.next {
+article nav.context a.next {
   justify-content: flex-end;
   padding-left: var(--fitz);
   padding-right: var(--offset);
 }
 
-article > nav.context a.next::before {
+article nav.context a.next::before {
   display: none;
 }
 
-article > nav.context a.next::after {
+article nav.context a.next::after {
   padding-top: .1em;
   font-family: var(--font-icon);
   content: ">";
@@ -766,15 +767,15 @@ article > nav.context a.next::after {
   text-align: right;
 }
 
-article > nav.context .breadcrumbs {
+article nav.context .breadcrumbs {
   text-align: center;
 }
 
-article > nav.context .breadcrumbs a {
+article nav.context .breadcrumbs a {
   display: block;
 }
 
-article > nav.context .breadcrumbs a::before {
+article nav.context .breadcrumbs a::before {
   font-family: var(--font-icon);
   content: "^";
   padding: 0 .25em;
@@ -806,6 +807,11 @@ article > figure.modal {
 
 article > figure.modal > img {
   max-height: none;
+}
+
+article > header {
+  display: flex;
+  flex-flow: column;
 }
 
 article > header > h1 {
@@ -883,7 +889,7 @@ article > .content img {
 article > footer {
   grid-area: footer;
   display: flex;
-  flex-wrap: wrap;
+  flex-flow: column;
   justify-content: space-between;
 }
 
