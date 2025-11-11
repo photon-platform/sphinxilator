@@ -59,8 +59,8 @@ year = datetime.now().year
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    "sphinx.ext.autodoc",
-    "sphinx.ext.autosummary",
+    #  "sphinx.ext.autodoc",
+    #  "sphinx.ext.autosummary",
     "sphinx.ext.extlinks",
     "sphinx.ext.intersphinx",
     "sphinx.ext.githubpages",
@@ -85,7 +85,7 @@ extensions = [
     "autoapi.extension",
 ]
 
-autosummary_generate = True
+# autosummary_generate = True
 
 # AutoAPI options
 autoapi_dirs = ['../src']

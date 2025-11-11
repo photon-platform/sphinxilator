@@ -1,19 +1,15 @@
 """
-publish
-============
+``photon_platform.publish``
 
-PHOTON platform
----------------
-
-.. todo:: complete documentation
-
+- templates and styles for the PHOTON theme
+- custom directives for processing collections
 """
 import os
 
 __author__ = "PHOTON platform"
 __maintainer__ = "PHOTON platform"
 __email__ = "github@phiarchitect.com"
-__version__ = "0.2.8"
+__version__ = "0.2.9"
 __licence__ = "MIT"
 
 def get_path() -> str:

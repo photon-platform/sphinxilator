@@ -1,6 +1,15 @@
 changelog
 =========
 
+0.2.9
+-----
+*2025-11-10*
+
+**fixed**
+
++ Added `matplotlib` as an explicit dependency to resolve build warnings and ensure social card generation.
++ Disabled the `sphinx.ext.autosummary` and `sphinx.ext.autodoc` extensions, which were running unnecessarily and cluttering the build output.
+
 0.2.8
 -----
 *2025-11-10*

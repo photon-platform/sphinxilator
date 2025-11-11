@@ -25,6 +25,7 @@ dependencies = [
     "libsass",
     "click",
     "sphinx-autoapi",
+    "matplotlib",
 ]
 
 [project.scripts]
