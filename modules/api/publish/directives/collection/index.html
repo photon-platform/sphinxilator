@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>publish.directives.collection &mdash; Project name not set  documentation</title>
   <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=ea5fcf70" />
-  <link rel="stylesheet" type="text/css" href="../../../../../_static/css/styles.css?v=5b79a833" />
+  <link rel="stylesheet" type="text/css" href="../../../../../_static/css/styles.css?v=4897eb2f" />
   <link rel="stylesheet" type="text/css" href="../../../../../_static/graphviz.css?v=4ae1632d" />
 </head>
 <body>
@@ -30,10 +30,10 @@
           <a href="../../../../../mission/index.html"  >mission</a>
         </li>
         <li>
-          <a href="../../../../index.html"  >modules</a>
+          <a href="../../../../../usage/index.html"  >usage</a>
         </li>
         <li>
-          <a href="../../../../../usage/index.html"  >usage</a>
+          <a href="../../../../index.html"  >modules</a>
         </li>
         <li>
           <a href="../../../../../log/index.html"  >log</a>
@@ -46,14 +46,6 @@
 
     <article>
       <header>
-        <nav class="context">
-          <div class="prev">
-             <a href="../index.html" class="btn btn-neutral float-left" title="publish.directives" >Prev</a>
-          </div>
-          <div class="next">
-            <a href="../../global_conf/index.html" class="btn btn-neutral float-right" title="publish.global_conf" >Next</a>
-          </div>
-        </nav>
       <nav class="breadcrumbs">
         <span><a href="../../../../../index.html">Home</a></span>
           <span>/</span>
@@ -65,6 +57,14 @@
         <span>/</span>
         <span>publish.directives.collection</span>
       </nav>
+        <nav class="context">
+          <div class="prev">
+             <a href="../index.html" class="btn btn-neutral float-left" title="publish.directives" >Prev</a>
+          </div>
+          <div class="next">
+            <a href="../../global_conf/index.html" class="btn btn-neutral float-right" title="publish.global_conf" >Next</a>
+          </div>
+        </nav>
       </header>
       <div class="content">
           <section id="module-publish.directives.collection">
@@ -83,11 +83,17 @@
 <h2>Functions<a class="headerlink" href="#functions" title="Link to this heading">¶</a></h2>
 <table class="autosummary longtable docutils align-default">
 <tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#publish.directives.collection.collect_metadata" title="publish.directives.collection.collect_metadata"><code class="xref py py-obj docutils literal notranslate"><span class="pre">collect_metadata</span></code></a>(app, env)</p></td>
+<td><p>Collect all tags and categories from document metadata.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#publish.directives.collection.generate_tag_category_pages" title="publish.directives.collection.generate_tag_category_pages"><code class="xref py py-obj docutils literal notranslate"><span class="pre">generate_tag_category_pages</span></code></a>(app)</p></td>
+<td><p>Dynamically generate pages for each tag and category.</p></td>
+</tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#publish.directives.collection.build_nav_links" title="publish.directives.collection.build_nav_links"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_nav_links</span></code></a>(→ None)</p></td>
-<td><p>Build navigation links from document metadata and add them to the context.</p></td>
+<td><p>Build navigation links and add tags/categories to the context.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#publish.directives.collection.setup" title="publish.directives.collection.setup"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setup</span></code></a>(→ dict)</p></td>
-<td><p>Register the collection directive and connect the build_nav_links function.</p></td>
+<td><p>Register directives and connect to Sphinx events.</p></td>
 </tr>
 </tbody>
 </table>
@@ -130,15 +136,27 @@ and render them using a Jinja2 template.</p>
 </dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="publish.directives.collection.collect_metadata">
+<span class="sig-prename descclassname"><span class="pre">publish.directives.collection.</span></span><span class="sig-name descname"><span class="pre">collect_metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">env</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../../_modules/publish/directives/collection.html#collect_metadata"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#publish.directives.collection.collect_metadata" title="Link to this definition">¶</a></dt>
+<dd><p>Collect all tags and categories from document metadata.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="publish.directives.collection.generate_tag_category_pages">
+<span class="sig-prename descclassname"><span class="pre">publish.directives.collection.</span></span><span class="sig-name descname"><span class="pre">generate_tag_category_pages</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../../_modules/publish/directives/collection.html#generate_tag_category_pages"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#publish.directives.collection.generate_tag_category_pages" title="Link to this definition">¶</a></dt>
+<dd><p>Dynamically generate pages for each tag and category.</p>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="publish.directives.collection.build_nav_links">
 <span class="sig-prename descclassname"><span class="pre">publish.directives.collection.</span></span><span class="sig-name descname"><span class="pre">build_nav_links</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pagename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.9/library/stdtypes.html#str" title="(in Python v3.9)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">templatename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.9/library/stdtypes.html#str" title="(in Python v3.9)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.9/library/stdtypes.html#dict" title="(in Python v3.9)"><span class="pre">dict</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">doctree</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3.9/library/constants.html#None" title="(in Python v3.9)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../../../../../_modules/publish/directives/collection.html#build_nav_links"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#publish.directives.collection.build_nav_links" title="Link to this definition">¶</a></dt>
-<dd><p>Build navigation links from document metadata and add them to the context.</p>
+<dd><p>Build navigation links and add tags/categories to the context.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="publish.directives.collection.setup">
 <span class="sig-prename descclassname"><span class="pre">publish.directives.collection.</span></span><span class="sig-name descname"><span class="pre">setup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3.9/library/stdtypes.html#dict" title="(in Python v3.9)"><span class="pre">dict</span></a></span></span><a class="reference internal" href="../../../../../_modules/publish/directives/collection.html#setup"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#publish.directives.collection.setup" title="Link to this definition">¶</a></dt>
-<dd><p>Register the collection directive and connect the build_nav_links function.</p>
+<dd><p>Register directives and connect to Sphinx events.</p>
 </dd></dl>
 
 </section>
@@ -146,6 +164,8 @@ and render them using a Jinja2 template.</p>
 
       </div>
       <footer>
+
+
         <nav class="context">
           <div class="prev">
              <a href="../index.html" class="btn btn-neutral float-left" title="publish.directives" >Prev</a>
@@ -179,6 +199,36 @@ and render them using a Jinja2 template.</p>
             <li><a href="../../../../../log/24.126-084330/index.html">test</a></li>
         
             <li><a href="../../../../../log/24.125-164141/index.html">introducing publish</a></li>
+        
+    </ul>
+</aside>
+
+    
+
+<aside class="aside-tags">
+    <h3>Tags</h3>
+    <ul>
+        
+        <li><a href="../../../../../tags/code.html">code</a></li>
+        
+        <li><a href="../../../../../tags/introduction.html">introduction</a></li>
+        
+        <li><a href="../../../../../tags/test.html">test</a></li>
+        
+        <li><a href="../../../../../tags/usage.html">usage</a></li>
+        
+    </ul>
+</aside>
+
+    
+
+<aside class="aside-categories">
+    <h3>Categories</h3>
+    <ul>
+        
+        <li><a href="../../../../../categories/.html"></a></li>
+        
+        <li><a href="../../../../../categories/publish.html">publish</a></li>
         
     </ul>
 </aside>

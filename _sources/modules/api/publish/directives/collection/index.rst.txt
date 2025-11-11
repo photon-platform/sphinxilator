@@ -17,6 +17,8 @@ Functions
 
 .. autoapisummary::
 
+   publish.directives.collection.collect_metadata
+   publish.directives.collection.generate_tag_category_pages
    publish.directives.collection.build_nav_links
    publish.directives.collection.setup
 
@@ -60,13 +62,23 @@ Module Contents
 
 
 
+.. py:function:: collect_metadata(app, env)
+
+   Collect all tags and categories from document metadata.
+
+
+.. py:function:: generate_tag_category_pages(app)
+
+   Dynamically generate pages for each tag and category.
+
+
 .. py:function:: build_nav_links(app, pagename: str, templatename: str, context: dict, doctree) -> None
 
-   Build navigation links from document metadata and add them to the context.
+   Build navigation links and add tags/categories to the context.
 
 
 .. py:function:: setup(app) -> dict
 
-   Register the collection directive and connect the build_nav_links function.
+   Register directives and connect to Sphinx events.
 
 

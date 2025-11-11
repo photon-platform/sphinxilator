@@ -1,6 +1,6 @@
 :type: log
 :date: 24.126-084512
-:tags: publish, app
+:tags: code
 :category: publish
 
 add global_conf.py

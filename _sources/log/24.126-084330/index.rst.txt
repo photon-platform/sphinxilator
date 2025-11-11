@@ -1,6 +1,6 @@
 :type: log
 :date: 24.126-084330
-:tags: publish, app
+:tags: test
 :category: publish
 
 test
