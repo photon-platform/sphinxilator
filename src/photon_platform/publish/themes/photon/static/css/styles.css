@@ -1675,7 +1675,6 @@ body > footer {
   flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
   padding-top: 1em;
   border-top: 1px solid var(--border-color);
   margin-top: 1em;

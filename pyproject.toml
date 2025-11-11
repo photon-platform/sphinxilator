@@ -18,7 +18,6 @@ dependencies = [
     "myst_parser",
     "sphinx-carousel",
     "sphinxcontrib-jquery",
-    "sphinxcontrib-sass",
     "sphinxcontrib-youtube",
     "sphinx_revealjs",
     "sphinxext-opengraph",

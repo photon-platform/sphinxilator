@@ -77,7 +77,6 @@ extensions = [
     #  "sphinxcontrib.budoux",
     #  "sphinxcontrib.gtagjs",
     #  "sphinxcontrib.oembed",
-    "sphinxcontrib.sass",
     "sphinxext.opengraph",
     "sphinx_carousel.carousel",
     "sphinxcontrib.jquery",
@@ -173,9 +172,3 @@ autodoc_default_options = {
 }
 
 html_permalinks = True
-
-# SASS options
-sass_src_dir = 'themes/photon/static/scss'
-sass_out_dir = 'themes/photon/static/css'
-sass_filename = 'photon.scss'
-sass_args = ['--style', 'expanded']
