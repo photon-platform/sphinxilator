@@ -17,7 +17,6 @@ Attributes
    publish.global_conf.html_context
    publish.global_conf.year
    publish.global_conf.extensions
-   publish.global_conf.autosummary_generate
    publish.global_conf.autoapi_dirs
    publish.global_conf.autoapi_options
    publish.global_conf.autoapi_root
@@ -70,11 +69,7 @@ Module Contents
 .. py:data:: year
 
 .. py:data:: extensions
-   :value: ['sphinx.ext.autodoc', 'sphinx.ext.autosummary', 'sphinx.ext.extlinks',...
-
-
-.. py:data:: autosummary_generate
-   :value: True
+   :value: ['sphinx.ext.extlinks', 'sphinx.ext.intersphinx', 'sphinx.ext.githubpages',...
 
 
 .. py:data:: autoapi_dirs

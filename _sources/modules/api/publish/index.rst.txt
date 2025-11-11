@@ -5,13 +5,10 @@ publish
 
 .. autoapi-nested-parse::
 
-   publish
-   ============
+   ``photon_platform.publish``
 
-   PHOTON platform
-   ---------------
-
-   .. todo:: complete documentation
+   - templates and styles for the PHOTON theme
+   - custom directives for processing collections
 
 
 
@@ -64,7 +61,7 @@ Package Contents
 
 
 .. py:data:: __version__
-   :value: '0.2.8'
+   :value: '0.2.9'
 
 
 .. py:data:: __licence__
