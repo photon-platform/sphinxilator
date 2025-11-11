@@ -1,6 +1,20 @@
 changelog
 =========
 
+0.2.12
+------
+*2025-11-11*
+
+**fixed**
+
++ Resolved an issue where tags were being split into individual characters in article excerpts.
++ Ensured that both tags and categories are consistently handled as lists, allowing for multiple values.
+
+**changed**
+
++ Article excerpts now display metadata (date, category, tags) with labels for improved clarity.
++ The styling of article excerpts has been updated to be more condensed and visually consistent with the full article view.
+
 0.2.11
 ------
 *2025-11-11*

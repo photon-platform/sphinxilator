@@ -1,6 +1,8 @@
         <article class="excerpt">
           <header>
             <h2><a href="{{ pathto(article.docname) }}">{{ article.title }}</a></h2>
+{% set meta = article %}
+{% include "_articles/_nav_meta.html" %}
           </header>
           <div class="content">
 {#- Placeholder for excerpt content -#}

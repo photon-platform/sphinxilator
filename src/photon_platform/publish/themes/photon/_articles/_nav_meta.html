@@ -1,11 +1,20 @@
+
 {%- if meta %}
         <div class="meta">
+{%-   if meta.date %}
+          <span class="date">Date: {{ meta.date }}</span>
+{%-   endif %}
 {%-   if meta.category %}
           <span class="category">
-            <a href="{{ pathto('categories/' ~ meta.category) }}">{{ meta.category }}</a></span>
+            Category:
+{%-     for category in meta.category %}
+            <a href="{{ pathto('categories/' ~ category) }}">{{ category }}</a>
+{%-     endfor %}
+          </span>
 {%-   endif %}
 {%-   if meta.tags %}
           <span class="tags">
+            Tags:
 {%-     for tag in meta.tags %}
             <a href="{{ pathto('tags/' ~ tag) }}">{{ tag }}</a>
 {%-     endfor %}
@@ -13,3 +22,4 @@
 {%-   endif %}
         </div>
 {%- endif %}
+
