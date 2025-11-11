@@ -1,24 +1,35 @@
     <article>
-      <nav class="context">
-        <div class="prev">
+      <header>
+        <nav class="context">
+          <div class="prev">
 {%- if prev %}
-           <a href="{{ prev.link|e }}" class="prev" title="{{ prev.title|striptags|e }}" >Prev</a>
+             <a href="{{ prev.link|e }}" class="prev" title="{{ prev.title|striptags|e }}" >Prev</a>
 {%- endif %}
-        </div>
-        <div class="next">
+          </div>
+          <div class="next">
 {%- if next %}
-          <a href="{{ next.link|e }}" class="next" title="{{ next.title|striptags|e }}" >Next</a>
+            <a href="{{ next.link|e }}" class="next" title="{{ next.title|striptags|e }}" >Next</a>
 {%- endif %}
-        </div>
-      </nav>
+          </div>
+        </nav>
 {% include "_sections/_breadcrumbs.html" %}
-      {#- <header> #}
         {#- <h1>{{ title }}</h1> #}
-      {#- </header> #}
+      </header>
       <div class="content">
           {{ body }}
       </div>
       <footer>
+        <nav class="context">
+          <div class="prev">
+{%- if prev %}
+             <a href="{{ prev.link|e }}" class="prev" title="{{ prev.title|striptags|e }}" >Prev</a>
+{%- endif %}
+          </div>
+          <div class="next">
+{%- if next %}
+            <a href="{{ next.link|e }}" class="next" title="{{ next.title|striptags|e }}" >Next</a>
+{%- endif %}
+          </div>
 {#- Placeholder for article footer content -#}
       </footer>
     </article>
