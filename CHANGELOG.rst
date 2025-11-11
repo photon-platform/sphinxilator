@@ -1,6 +1,14 @@
 changelog
 =========
 
+0.2.13
+------
+*2025-11-11*
+
+**fixed**
+
++ Removed redundant SASS compilation performed by `sphinxcontrib-sass`, which was creating an empty `docsrc/theme/photon/static/css` directory. The build process now relies solely on the `publish.build_sass()` function for all SASS compilation.
+
 0.2.12
 ------
 *2025-11-11*
