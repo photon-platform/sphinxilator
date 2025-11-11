@@ -3,8 +3,6 @@ from functools import partial
 from sphinx.util.docutils import SphinxDirective
 from docutils.parsers.rst import directives
 from docutils import nodes
-from sphinx.jinja2glue import SphinxFileSystemLoader
-from jinja2 import Environment
 from sphinx.addnodes import toctree
 
 class CollectionDirective(SphinxDirective):
@@ -40,9 +38,7 @@ class CollectionDirective(SphinxDirective):
             for filename in filenames:
                 if filename.endswith('.rst'):
                     full_path = os.path.join(dirpath, filename)
-                    # Convert to docname format (relative to srcdir, no extension)
                     docname = os.path.splitext(os.path.relpath(full_path, env.srcdir))[0]
-                    # Exclude the current document itself
                     if docname != env.docname:
                         docnames.append(docname)
 
@@ -74,12 +70,10 @@ class CollectionDirective(SphinxDirective):
             'pathto': pathto,
         }
 
-        # Render the template
         jinja_env = self.env.app.builder.templates.environment
         template = jinja_env.get_template(template_name)
         html = template.render(context)
         
-        # Create a hidden toctree
         toc = toctree()
         toc['glob'] = False
         toc['hidden'] = True
@@ -88,8 +82,80 @@ class CollectionDirective(SphinxDirective):
         
         return [nodes.raw('', html, format='html'), toc]
 
+def collect_metadata(app, env):
+    """Collect all tags and categories from document metadata."""
+    env.all_tags = set()
+    env.all_categories = set()
+    
+    for docname in env.found_docs:
+        meta = env.metadata.get(docname, {})
+        if 'tags' in meta:
+            tags_meta = meta['tags']
+            if isinstance(tags_meta, str):
+                tags = [tag.strip() for tag in tags_meta.split(',')]
+            else:
+                tags = tags_meta
+            env.all_tags.update(tags)
+        if 'category' in meta:
+            env.all_categories.add(meta['category'])
+
+def generate_tag_category_pages(app):
+    """Dynamically generate pages for each tag and category."""
+    env = app.env
+    if hasattr(env, 'all_tags'):
+        for tag in env.all_tags:
+            articles = []
+            for docname in env.found_docs:
+                meta = env.metadata.get(docname, {})
+                if 'tags' in meta:
+                    tags_meta = meta['tags']
+                    if isinstance(tags_meta, str):
+                        tags = [t.strip() for t in tags_meta.split(',')]
+                    else:
+                        tags = tags_meta
+                    if tag in tags:
+                        title_node = env.titles.get(docname)
+                        if title_node:
+                            articles.append({
+                                'title': title_node.astext(),
+                                'docname': docname,
+                            })
+            context = {
+                'collection': {
+                    'title': f"Posts tagged '{tag}'",
+                    'articles': articles,
+                }
+            }
+            yield (f'tags/{tag}', context, 'tag_page.html')
+
+    if hasattr(env, 'all_categories'):
+        for category in env.all_categories:
+            articles = []
+            for docname in env.found_docs:
+                meta = env.metadata.get(docname, {})
+                if 'category' in meta and category == meta['category']:
+                    title_node = env.titles.get(docname)
+                    if title_node:
+                        articles.append({
+                            'title': title_node.astext(),
+                            'docname': docname,
+                        })
+            context = {
+                'collection': {
+                    'title': f"Posts in category '{category}'",
+                    'articles': articles,
+                }
+            }
+            yield (f'categories/{category}', context, 'category_page.html')
+
 def build_nav_links(app, pagename: str, templatename: str, context: dict, doctree) -> None:
-    """Build navigation links from document metadata and add them to the context."""
+    """Build navigation links and add tags/categories to the context."""
+    context['tags'] = sorted(list(app.env.all_tags)) if hasattr(app.env, 'all_tags') else []
+    context['categories'] = sorted(list(app.env.all_categories)) if hasattr(app.env, 'all_categories') else []
+
+    if 'meta' in context and context['meta'] and 'tags' in context['meta'] and isinstance(context['meta']['tags'], str):
+        context['meta']['tags'] = [tag.strip() for tag in context['meta']['tags'].split(',')]
+
     header_nav_list = []
     footer_nav_list = []
     recent_logs = []
@@ -120,21 +186,20 @@ def build_nav_links(app, pagename: str, templatename: str, context: dict, doctre
                     'date': meta.get('date', ''),
                 })
 
-    # Sort the navigation list by the 'order' metadata field
     header_nav_list.sort(key=lambda x: x['order'])
     context['header_nav_list'] = header_nav_list
 
-    # Sort the footer navigation list by the 'order' metadata field
     footer_nav_list.sort(key=lambda x: x['order'])
     context['footer_nav_list'] = footer_nav_list
 
-    # Sort the recent logs list by date
     recent_logs.sort(key=lambda x: x['date'], reverse=True)
     context['recent_logs'] = recent_logs[:5]
 
 def setup(app) -> dict:
-    """Register the collection directive and connect the build_nav_links function."""
+    """Register directives and connect to Sphinx events."""
     app.add_directive("collection", CollectionDirective)
+    app.connect('env-updated', collect_metadata)
+    app.connect('html-collect-pages', generate_tag_category_pages)
     app.connect('html-page-context', build_nav_links)
     return {
         'version': '0.1',

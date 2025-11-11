@@ -1,6 +1,15 @@
 changelog
 =========
 
+0.2.11
+------
+*2025-11-11*
+
+**added**
+
++ Added support for tags and categories, with dedicated pages for each.
++ Integrated tags and categories into article metadata and sidebar navigation.
+
 0.2.10
 ------
 *2025-11-10*

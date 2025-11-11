@@ -1,7 +1,7 @@
 :type: log
 :date: 24.125-164141
-:tags: publish, app
-:category: publish
+:tags: introduction
+:category: 
 
 introducing publish
 ===================
