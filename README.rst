@@ -29,6 +29,7 @@ Key Features
 - **Extended Ablog Support**: Enhanced Ablog functionality to support different
   content types, such as events, tasks, and updates.
 - **Streamlined Project Integration**: Provides a structured approach for integrating `publish` into existing and new Sphinx projects, ensuring consistency and efficiency in documentation deployment.
+- **Enhanced Article Navigation**: Styled article navigation buttons for improved prominence and theme consistency.
 
 Installation
 ------------
