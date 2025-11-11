@@ -998,8 +998,6 @@ article > .gallery.modal > .list > figure > img {
 }
 
 article.excerpt {
-  cursor: pointer;
-  transition: box-shadow .5s,  background .5s, color .5s;
   padding: var(--fitz-2);
   margin: var(--fitz);
 }
@@ -1026,12 +1024,6 @@ article.excerpt .article-share {
 
 article.excerpt .more {
   align-self: flex-end;
-}
-
-article.excerpt:hover {
-  --bg: var(--color-key-lighter);
-  color: black;
-  box-shadow: 0.25em 0.25em 0.25em rgba(0, 0, 0, 0.4);
 }
 
 /* asides *****************************/
