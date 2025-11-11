@@ -30,10 +30,10 @@
           <a href="mission/index.html"  >mission</a>
         </li>
         <li>
-          <a href="modules/index.html"  >modules</a>
+          <a href="usage/index.html"  >usage</a>
         </li>
         <li>
-          <a href="usage/index.html"  >usage</a>
+          <a href="modules/index.html"  >modules</a>
         </li>
         <li>
           <a href="log/index.html"  >log</a>
@@ -67,7 +67,15 @@
 <section id="id2">
 <h1>changelog<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h1>
 <section id="id3">
-<h2>0.2.12<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h2>
+<h2>0.2.13<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h2>
+<p><em>2025-11-11</em></p>
+<p><strong>fixed</strong></p>
+<ul class="simple">
+<li><p>Removed redundant SASS compilation performed by <cite>sphinxcontrib-sass</cite>, which was creating an empty <cite>docsrc/theme/photon/static/css</cite> directory. The build process now relies solely on the <cite>publish.build_sass()</cite> function for all SASS compilation.</p></li>
+</ul>
+</section>
+<section id="id4">
+<h2>0.2.12<a class="headerlink" href="#id4" title="Link to this heading">¶</a></h2>
 <p><em>2025-11-11</em></p>
 <p><strong>fixed</strong></p>
 <ul class="simple">
@@ -80,8 +88,8 @@
 <li><p>The styling of article excerpts has been updated to be more condensed and visually consistent with the full article view.</p></li>
 </ul>
 </section>
-<section id="id4">
-<h2>0.2.11<a class="headerlink" href="#id4" title="Link to this heading">¶</a></h2>
+<section id="id5">
+<h2>0.2.11<a class="headerlink" href="#id5" title="Link to this heading">¶</a></h2>
 <p><em>2025-11-11</em></p>
 <p><strong>added</strong></p>
 <ul class="simple">
@@ -89,16 +97,16 @@
 <li><p>Integrated tags and categories into article metadata and sidebar navigation.</p></li>
 </ul>
 </section>
-<section id="id5">
-<h2>0.2.10<a class="headerlink" href="#id5" title="Link to this heading">¶</a></h2>
+<section id="id6">
+<h2>0.2.10<a class="headerlink" href="#id6" title="Link to this heading">¶</a></h2>
 <p><em>2025-11-10</em></p>
 <p><strong>changed</strong></p>
 <ul class="simple">
 <li><p>The article navigation buttons have been styled to be more prominent and consistent with the theme.</p></li>
 </ul>
 </section>
-<section id="id6">
-<h2>0.2.9<a class="headerlink" href="#id6" title="Link to this heading">¶</a></h2>
+<section id="id7">
+<h2>0.2.9<a class="headerlink" href="#id7" title="Link to this heading">¶</a></h2>
 <p><em>2025-11-10</em></p>
 <p><strong>fixed</strong></p>
 <ul class="simple">
@@ -106,8 +114,8 @@
 <li><p>Disabled the <cite>sphinx.ext.autosummary</cite> and <cite>sphinx.ext.autodoc</cite> extensions, which were running unnecessarily and cluttering the build output.</p></li>
 </ul>
 </section>
-<section id="id7">
-<h2>0.2.8<a class="headerlink" href="#id7" title="Link to this heading">¶</a></h2>
+<section id="id8">
+<h2>0.2.8<a class="headerlink" href="#id8" title="Link to this heading">¶</a></h2>
 <p><em>2025-11-10</em></p>
 <p><strong>fixed</strong></p>
 <ul class="simple">
@@ -115,16 +123,16 @@
 <li><p>Added a bottom margin to paragraphs and a top margin to headings to improve readability and spacing.</p></li>
 </ul>
 </section>
-<section id="id8">
-<h2>0.2.7<a class="headerlink" href="#id8" title="Link to this heading">¶</a></h2>
+<section id="id9">
+<h2>0.2.7<a class="headerlink" href="#id9" title="Link to this heading">¶</a></h2>
 <p><em>2025-11-09</em></p>
 <p><strong>changed</strong></p>
 <ul class="simple">
 <li><p>The style of the headerlink has been changed to match the size of the heading it’s in. It is now faded until hovered over, at which point it shows the link color. It also has a little left padding to separate it from the heading.</p></li>
 </ul>
 </section>
-<section id="id9">
-<h2>0.2.6<a class="headerlink" href="#id9" title="Link to this heading">¶</a></h2>
+<section id="id10">
+<h2>0.2.6<a class="headerlink" href="#id10" title="Link to this heading">¶</a></h2>
 <p><em>2025-11-09</em></p>
 <p><strong>added</strong></p>
 <ul class="simple">
@@ -137,32 +145,32 @@
 <li><p>Cleaned up <cite>global_conf.py</cite> by removing unused configuration variables and adding a module docstring.</p></li>
 </ul>
 </section>
-<section id="id10">
-<h2>0.2.5<a class="headerlink" href="#id10" title="Link to this heading">¶</a></h2>
+<section id="id11">
+<h2>0.2.5<a class="headerlink" href="#id11" title="Link to this heading">¶</a></h2>
 <p><em>2025-11-09</em></p>
 <p><strong>added</strong></p>
 <ul class="simple">
 <li><p>Admonition styling for todo, note, warning, danger, attention, caution, error, hint, important, and tip.</p></li>
 </ul>
 </section>
-<section id="id11">
-<h2>0.2.4<a class="headerlink" href="#id11" title="Link to this heading">¶</a></h2>
+<section id="id12">
+<h2>0.2.4<a class="headerlink" href="#id12" title="Link to this heading">¶</a></h2>
 <p><em>2025-11-09</em></p>
 <p><strong>added</strong></p>
 <ul class="simple">
 <li><p>Added the organization and repository name to the header for better branding and context.</p></li>
 </ul>
 </section>
-<section id="id12">
-<h2>0.2.3<a class="headerlink" href="#id12" title="Link to this heading">¶</a></h2>
+<section id="id13">
+<h2>0.2.3<a class="headerlink" href="#id13" title="Link to this heading">¶</a></h2>
 <p><em>2025-11-09</em></p>
 <p><strong>added</strong></p>
 <ul class="simple">
 <li><p>Added a footer navigation section, configurable via page metadata.</p></li>
 </ul>
 </section>
-<section id="id13">
-<h2>0.2.2<a class="headerlink" href="#id13" title="Link to this heading">¶</a></h2>
+<section id="id14">
+<h2>0.2.2<a class="headerlink" href="#id14" title="Link to this heading">¶</a></h2>
 <p><em>2025-11-08</em></p>
 <p><strong>changed</strong></p>
 <ul class="simple">
@@ -172,16 +180,16 @@
 <li><p>Replaced the aggressive CSS reset with a more modern, targeted approach.</p></li>
 </ul>
 </section>
-<section id="id14">
-<h2>0.2.1<a class="headerlink" href="#id14" title="Link to this heading">¶</a></h2>
+<section id="id15">
+<h2>0.2.1<a class="headerlink" href="#id15" title="Link to this heading">¶</a></h2>
 <p><em>2025-11-08</em></p>
 <p><strong>changed</strong></p>
 <ul class="simple">
 <li><p>The SCSS compilation now generates expanded, readable CSS instead of compressed CSS. This improves debuggability of the styles.</p></li>
 </ul>
 </section>
-<section id="id15">
-<h2>0.2.0<a class="headerlink" href="#id15" title="Link to this heading">¶</a></h2>
+<section id="id16">
+<h2>0.2.0<a class="headerlink" href="#id16" title="Link to this heading">¶</a></h2>
 <p><em>2025-11-08</em></p>
 <p><strong>changed</strong></p>
 <ul class="simple">
@@ -192,8 +200,8 @@
 <li><p>Integrated SASS for more maintainable and flexible styling.</p></li>
 </ul>
 </section>
-<section id="id16">
-<h2>0.1.2<a class="headerlink" href="#id16" title="Link to this heading">¶</a></h2>
+<section id="id17">
+<h2>0.1.2<a class="headerlink" href="#id17" title="Link to this heading">¶</a></h2>
 <p><em>2025-11-07</em></p>
 <p><strong>changed</strong></p>
 <ul class="simple">
@@ -205,32 +213,32 @@
 <li><p>Removed the old, unused <cite>theme</cite> directory.</p></li>
 </ul>
 </section>
-<section id="id17">
-<h2>0.1.1<a class="headerlink" href="#id17" title="Link to this heading">¶</a></h2>
+<section id="id18">
+<h2>0.1.1<a class="headerlink" href="#id18" title="Link to this heading">¶</a></h2>
 <p><em>2025-11-07</em></p>
 <p><strong>fixed</strong></p>
 <ul class="simple">
 <li><p>Resolved build issues with the Sphinx documentation by removing outdated and conflicting files from the <cite>docsrc/modules</cite> directory. This ensures a clean and successful build process.</p></li>
 </ul>
 </section>
-<section id="id18">
-<h2>0.1.0<a class="headerlink" href="#id18" title="Link to this heading">¶</a></h2>
+<section id="id19">
+<h2>0.1.0<a class="headerlink" href="#id19" title="Link to this heading">¶</a></h2>
 <p><em>2025-11-07</em></p>
 <p><strong>removed</strong></p>
 <ul class="simple">
 <li><p>Removed the <cite>sphinxilator_theme</cite> and all its associated SCSS files, streamlining the project to focus on a single, unified theme provided by the <cite>publish</cite> tool. This change simplifies the theming architecture and removes legacy code.</p></li>
 </ul>
 </section>
-<section id="id19">
-<h2>0.0.4<a class="headerlink" href="#id19" title="Link to this heading">¶</a></h2>
+<section id="id20">
+<h2>0.0.4<a class="headerlink" href="#id20" title="Link to this heading">¶</a></h2>
 <p><em>2025-10-26</em></p>
 <p><strong>changed</strong></p>
 <ul class="simple">
 <li><p>…</p></li>
 </ul>
 </section>
-<section id="id20">
-<h2>0.0.3<a class="headerlink" href="#id20" title="Link to this heading">¶</a></h2>
+<section id="id21">
+<h2>0.0.3<a class="headerlink" href="#id21" title="Link to this heading">¶</a></h2>
 <p><em>2025-10-26</em></p>
 <p><strong>added</strong></p>
 <ul class="simple">
@@ -239,8 +247,8 @@
 <li><p>Added breadcrumbs and previous/next buttons for improved navigation.</p></li>
 </ul>
 </section>
-<section id="id21">
-<h2>0.0.2<a class="headerlink" href="#id21" title="Link to this heading">¶</a></h2>
+<section id="id22">
+<h2>0.0.2<a class="headerlink" href="#id22" title="Link to this heading">¶</a></h2>
 <p><em>2025-10-26</em></p>
 <p><strong>added</strong></p>
 <ul class="simple">
