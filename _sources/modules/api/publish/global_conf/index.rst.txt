@@ -36,10 +36,6 @@ Attributes
    publish.global_conf.html_logo
    publish.global_conf.autodoc_default_options
    publish.global_conf.html_permalinks
-   publish.global_conf.sass_src_dir
-   publish.global_conf.sass_out_dir
-   publish.global_conf.sass_filename
-   publish.global_conf.sass_args
 
 
 Functions
@@ -136,21 +132,5 @@ Module Contents
 
 .. py:data:: html_permalinks
    :value: True
-
-
-.. py:data:: sass_src_dir
-   :value: 'themes/photon/static/scss'
-
-
-.. py:data:: sass_out_dir
-   :value: 'themes/photon/static/css'
-
-
-.. py:data:: sass_filename
-   :value: 'photon.scss'
-
-
-.. py:data:: sass_args
-   :value: ['--style', 'expanded']
 
 
