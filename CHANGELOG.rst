@@ -1,6 +1,14 @@
 changelog
 =========
 
+0.2.10
+------
+*2025-11-10*
+
+**changed**
+
++ The article navigation buttons have been styled to be more prominent and consistent with the theme.
+
 0.2.9
 -----
 *2025-11-10*
